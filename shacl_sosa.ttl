@@ -1,0 +1,59 @@
+#### These are SHACL shapes for the SOSA ontology ####
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix sosa-shacl: <http://stko-kwg.geog.ucsb.ed/sosa-shacl/> .
+
+#####  Shapes for classes (19 in total in SOSA) ######
+### Shapes for the class sosa:Observation 
+sosa-shacl:ObservationConstraint
+	a sh:NodeShape ;
+	sh:targetClass sosa:Observation .
+	sh:property [
+		sh:path sosa:madeBySensor ;
+		sh:and (
+			[
+			rdfs:comment "An observation is made by one and only one sensor."@en ;
+		 	sh:maxCount 1 ;
+			sh:minCount 1 ;
+			]
+			[
+			rdfs:comment "An observation can only be made by instance of class sosa:Sensor."@en ;
+		 	sh:class sosa:Sensor ;			
+			]
+	 ] .
+	 sh:property [
+	 	sh:path sosa:usedProcedure  ;
+	 	rdfs:comment "An observation can only use instance from class sosa:Procedure."@en ;
+		sh:class sosa:Procedure ;	
+	 ] .
+
+	 
+### Shapes for the class sosa:ObservationCollection 
+
+### Shapes for the class sosa:ObservableProperty 
+
+### Shapes for the class sosa:FeatureOfInterest 
+
+### Shapes for the class sosa:Result 
+
+
+
+##### Shapes for object properties (36 in total in SOSA)
+### Shapes for the object property sosa:hasFeatureOfInterest 
+
+### Shapes for the object property sosa:hasResult 
+
+### Shapes for the object property sosa:isFeatureOfInterestOf 
+
+### Shapes for the object property sosa:observedProperty 
+
+### Shapes for the object property sosa:phenomenonTime 
+
+
+###### Shapes for datatype properties (2 in total in SOSA)
+### Shapes for the datatype property sosa:hasSimpleResult 
+
+### Shapes for the datatype property sosa:resultTime  
