@@ -1,0 +1,19 @@
+#### These are SHACL shapes for the SOSA ontology ####
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix sosa-shacl: <http://stko-kwg.geog.ucsb.ed/sosa-shacl/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+
+### Shapes for the class sosa:FeatureOfInterest 
+sosa-shacl:FeatureOfInterestConstraint
+	a sh:NodeShape ;
+	sh:targetClass sosa:FeatureOfInterest ;
+
+	sh:property [
+		sh:path sosa:hasSample ;
+		rdfs:comment "The sample of a feature of interst has to be from the class sosa:Sample."@en ;
+		sh:class sosa:Sample ;				
+	] .
