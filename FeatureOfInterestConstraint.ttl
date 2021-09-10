@@ -14,6 +14,6 @@ sosa-shacl:FeatureOfInterestConstraint
 
 	sh:property [
 		sh:path sosa:hasSample ;
-		rdfs:comment "The sample of a feature of interst has to be from the class sosa:Sample."@en ;
+		rdfs:comment "The sample of a feature of interest has to be from the class sosa:Sample."@en ;
 		sh:class sosa:Sample ;				
 	] .
