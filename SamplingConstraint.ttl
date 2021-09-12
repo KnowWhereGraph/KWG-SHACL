@@ -1,0 +1,47 @@
+#### These are SHACL shapes for the SOSA ontology -- sosa:Sampling####
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix sosa-shacl: <http://stko-kwg.geog.ucsb.ed/sosa-shacl/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+
+### Shape for class sosa:Sampling
+sosa-shacl:SampleConstraint
+	a sh:NodeShape ;
+	sh:targetClass sosa:Sampling ;
+	
+	sh:property [
+		sh:path sosa:madeBySampler ;
+		rdfs:comment "A sampling act is made by one and only one sampler that is an instance of sosa:Sampler."@en ;
+		sh:class sosa:Sampler ;	
+		sh:minCount 1 ;		
+		sh:maxCount 1 ;
+	] ;
+	
+	sh:property [
+		sh:path sosa:hasFeatureOfInterest ;
+		rdfs:comment "A sampling act is carried out for one and only one feature that is an instance of sosa:FeatureOfInterest."@en ;
+		sh:class sosa:FeatureOfInterest ;	
+		sh:minCount 1 ;		
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:path sosa:hasResult ;
+		rdfs:comment "A sampling act always results in atleast one sample that is an instance of sosa:Sample."@en ;
+		sh:class sosa:Sample ;	
+		sh:minCount 1 ;		
+	] ;
+	sh:property [
+		sh:path sosa:usedProcedure ;
+		rdfs:comment "A sampling act uses a procedure that is an instance of sosa:Procedure."@en ;
+		sh:class sosa:Procedure ;	
+	];
+	sh:property [
+		sh:path sosa:resultTime ;
+		rdfs:comment "A sampling act produces a result during exactly one temporal entity."@en ;
+		sh:minCount 1 ;		
+		sh:maxCount 1 ;	
+	].
+	

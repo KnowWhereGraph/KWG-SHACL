@@ -1,0 +1,28 @@
+#### These are SHACL shapes for the SOSA ontology -- sosa:Sample####
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix sosa-shacl: <http://stko-kwg.geog.ucsb.ed/sosa-shacl/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+
+### Shape for class sosa:Sample
+sosa-shacl:SampleConstraint
+	a sh:NodeShape ;
+	sh:targetClass sosa:Sample ;
+	
+	sh:property [
+	 	sh:path sosa:isResultOf ;
+	 	rdfs:comment "A Sample is the result of atleast one sampling act that is an instance of sosa:Sampling."@en ;
+		sh:class sosa:Sampling ;
+		sh:minCount 1 ; 
+	];
+	
+	
+	sh:property [
+	 	sh:path sosa:isSampleOf ;
+	 	rdfs:comment "A Sample is representative of atleast one feature of interest that is an instance of sosa:FeatureOfInterest."@en ;
+		sh:class sosa:FeatureOfInterest ;
+		sh:minCount 1 ; 
+	].
