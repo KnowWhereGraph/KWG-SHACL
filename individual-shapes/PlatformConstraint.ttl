@@ -1,0 +1,31 @@
+#### These are SHACL shapes for the SOSA ontology -- sosa:Sampling####
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix sosa-shacl: <http://stko-kwg.geog.ucsb.ed/sosa-shacl/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+
+### Shapes for class sosa:Platform
+sosa-shacl:PlatformConstraint
+	a sh:NodeShape ;
+	sh:targetClass sosa:Platform ;
+	sh:property [
+		sh:path sosa:hosts ;
+		sh:and (
+			[
+			rdfs:comment "A platform only hosts Systems (SOSA)." ;
+			sh:class ssn:System ;
+			]
+		)
+	]
+	sh:property [
+		sh:path sosa:inDeployment ;
+		sh:and (
+			[
+			rdfs:comment "Platforms are deployment only in Deployments" ;
+			sh:class ssn:Deployment
+			]
+		)
+	] .
