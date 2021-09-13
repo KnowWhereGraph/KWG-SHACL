@@ -30,7 +30,7 @@ sosa-shacl:ProcedureConstraint
 		)
 	] ;
 	sh:property [
-		sh:path ssn:implemntedBy ;
+		sh:path ssn:implementedBy ;
 		sh:and (
 			[
 			rdfs:comment "Procedures are implemented only by Systems." ;
