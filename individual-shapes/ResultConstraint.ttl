@@ -15,4 +15,4 @@ sosa-shacl:ResultConstraint
 	sh:property [
 		sh:path sosa:isResultOf ;
 		sh:minCount 1
-		]
+		] .
