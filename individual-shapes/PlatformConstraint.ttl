@@ -15,16 +15,16 @@ sosa-shacl:PlatformConstraint
 		sh:path sosa:hosts ;
 		sh:and (
 			[
-			rdfs:comment "A platform only hosts Systems (SOSA)." ;
+			rdfs:comment "We constrain the filler of sosa:hosts to ssn:System." ;
 			sh:class ssn:System ;
 			]
 		)
 	]
 	sh:property [
-		sh:path sosa:inDeployment ;
+		sh:path ssn:inDeployment ;
 		sh:and (
 			[
-			rdfs:comment "Platforms are deployment only in Deployments" ;
+			rdfs:comment "We constrain the filler of ssn:inDeployment to ssn:Deployment." ;
 			sh:class ssn:Deployment
 			]
 		)
