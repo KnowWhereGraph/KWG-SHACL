@@ -1,0 +1,34 @@
+#### These are SHACL shapes for the SOSA ontology -- sosa:Sensor####
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix sosa-shacl: <http://stko-kwg.geog.ucsb.ed/sosa-shacl/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+
+### Shapes for class sosa:Sensor
+sosa-shacl:SensorConstraint
+	a sh:NodeShape ;
+	sh:targetClass sosa:Sensor ;
+	rdfs:comment "We choose not to require a filler for ssn:implements." ;
+	rdrs:comment "We choose not to require a filler for ssn:detects." ;
+	sh:property [
+		sh:path sosa:observes ;
+		sh:and (
+			[
+			rdfs:comment "We constrain the filler of observes to sosa:ObservableProperty." ;
+			sh:class sosa:ObservableProperty ;
+			]
+		)
+	] ;
+	sh:property [
+		sh:path sosa:madeObservation ;
+		sh:and (
+			[
+			rdfs:comment "We constrain the filler of sosa:madeObservation to sosa:Observation." ;
+			sh:class sosa:ObservableProperty ;
+			]
+		)
+	] .
+	
