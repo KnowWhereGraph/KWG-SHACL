@@ -15,7 +15,7 @@ sosa-shacl:ProcedureConstraint
 		sh:path ssn:hasInput ;
 		sh:and (
 			[
-			rdfs:comment "Procedures have inputs." ;
+			rdfs:comment "We constrain the filler of ssn:hasInput to ssn:Input." ;
 			sh:class ssn:Input
 			]
 		)
@@ -24,7 +24,7 @@ sosa-shacl:ProcedureConstraint
 		sh:path ssn:hasOutput ;
 		sh:and (
 			[
-			rdfs:comment "Procedures have outputs." ;
+			rdfs:comment "We constrain the filler of ssn:hasOutput to ssn:Output." ;
 			sh:class ssn:Output
 			]
 		)
@@ -33,7 +33,7 @@ sosa-shacl:ProcedureConstraint
 		sh:path ssn:implementedBy ;
 		sh:and (
 			[
-			rdfs:comment "Procedures are implemented only by Systems." ;
+			rdfs:comment "We constrain the filler of ssn:implementedBy to ssn:System." ;
 			sh:class ssn:System
 			]
 		)
