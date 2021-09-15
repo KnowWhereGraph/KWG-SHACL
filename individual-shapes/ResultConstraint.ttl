@@ -12,7 +12,7 @@ sosa-shacl:ResultConstraint
 	a sh:NodeShape ;
 	sh:targetClass sosa:Result ;
 	sh:property [
-		sh:path sosa:isResultOf ;
-		rdfs:comment "We require a filler for sosa:isResultOf. This will generally be a sosa:Observation."
-		sh:minCount 1
+			sh:path sosa:isResultOf ;
+			rdfs:comment "We require a filler for sosa:isResultOf. This will generally be a sosa:Observation." ;
+			sh:minCount 1 ;
 		] .

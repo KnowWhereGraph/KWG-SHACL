@@ -13,8 +13,8 @@ sosa-shacl:ObservationCollectionConstraint
 	sh:targetClass sosa:ObservationCollection ;
 	sh:property [
 		sh:path sosa:hasMember ;
-		rdfs:comment "We mandate the existence of a filler for sosa:hasMember."
-		sh:minCount 1;
+		rdfs:comment "We mandate the existence of a filler for sosa:hasMember." ;
+		sh:minCount 1 ;
 	] ;
 	sh:property [
 		sh:path sosa:hasFeatureOfInterest ;
