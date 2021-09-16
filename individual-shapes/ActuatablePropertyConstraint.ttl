@@ -8,7 +8,7 @@
 @prefix time: <http://www.w3.org/2006/time#> .
 
 ### Shape for class sosa:Actuator
-sosa-shacl:ActuatableProperty
+sosa-shacl:ActuatablePropertyConstraint
 	a sh:NodeShape ;
 	sh:targetClass sosa:ActuatableProperty ;
 	
