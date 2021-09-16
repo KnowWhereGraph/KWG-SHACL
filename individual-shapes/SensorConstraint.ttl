@@ -12,11 +12,7 @@
 sosa-shacl:SensorConstraint
 	a sh:NodeShape ;
 	sh:targetClass sosa:Sensor ;
-	sh:property [
-		sh:path sosa:implements ;
-		rdfs:comment "We choose not to require a filler for ssn:implements." ;
-		sh:minCount 1 ;
-	] ;
+	rdfs:comment "We choose not to require a filler for ssn:implements." ;
 	sh:property [
 		sh:path sosa:observes ;
 		rdfs:comment "We constrain the filler of observes to sosa:ObservableProperty." ;
