@@ -8,7 +8,7 @@
 @prefix time: <http://www.w3.org/2006/time#> .
 
 ### Shape for class sosa:Actuation
-sosa-shacl:SampleConstraint
+sosa-shacl:Actuation
 	a sh:NodeShape ;
 	sh:targetClass sosa:Actuation ;
 	
