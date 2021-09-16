@@ -16,8 +16,9 @@ sosa-shacl:ObservationConstraint
 		sh:path sosa:madeBySensor ;
 		sh:and (
 			[
-			rdfs:comment "An observation is made by maximually only one sensor."@en ;
+			rdfs:comment "An observation is made exactly one sensor."@en ;
 		 	sh:maxCount 1 ;
+		 	sh:minCount 1 ;
 			]
 			[
 			rdfs:comment "An observation can only be made by instance of class sosa:Sensor."@en ;
@@ -34,8 +35,9 @@ sosa-shacl:ObservationConstraint
 	 	sh:path sosa:hasFeatureOfInterst ;
 	 	sh:and (
 		 	[
-		 	rdfs:comment "An observation is made for at most one feature of interest."@en ;
+		 	rdfs:comment "An observation is made for exactly one feature of interest."@en ;
 		 	sh:maxCount 1 ; 
+		 	sh:minCount 1 ;
 		 	]
 		 	[
 		 	rdfs:comment "The feature of interest of an observation is from the class sosa:FeatureOfInterest."@en ; 
@@ -47,13 +49,27 @@ sosa-shacl:ObservationConstraint
 		sh:path sosa:observedProperty ;
 		sh:and (
 			[
-			rdfs:comment "An observation is made for one and only one obervable property."@en ;
+			rdfs:comment "An observation is made for exactly one obervable property."@en ;
 		 	sh:maxCount 1 ;
 		 	sh:minCount 1 ; 
 			]
 			[
 			rdfs:comment "An observable property belongs to the class sosa:ObservableProperty."@en ;
 		 	sh:class sosa:ObservableProperty ;			
+			]		
+		) 
+	] ;
+	sh:property [
+		sh:path ssn:wasOriginatedBy ;
+		sh:and (
+			[
+			rdfs:comment "An observation is originated by exactly one instance."@en ;
+		 	sh:maxCount 1 ;
+		 	sh:minCount 1 ; 
+			]
+			[
+			rdfs:comment "An observation should always be originated by instances of ssn:Stimulus."@en ;
+		 	sh:class ssn:Stimulus ;			
 			]		
 		) 
 	] ;
