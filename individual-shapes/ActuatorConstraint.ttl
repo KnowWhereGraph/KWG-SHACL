@@ -6,21 +6,22 @@
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
 @prefix sosa-shacl: <http://stko-kwg.geog.ucsb.ed/sosa-shacl/> .
 @prefix time: <http://www.w3.org/2006/time#> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
 
 ### Shape for class sosa:Actuator 
-sosa-shacl:Actuator
+sosa-shacl:ActuatorConstraint
 	a sh:NodeShape ;
 	sh:targetClass sosa:Actuator ;
 	
 	sh:property [
 	 	sh:path ssn:implements ;
-	 	rdfs:comment "An actuator implements atleast one actuation."@en ;
+	 	rdfs:comment "An actuator implements at least one actuation."@en ;
 		sh:minCount 1 ; 
 	];
 	
 	sh:property [
 	 	sh:path ssn:forProperty ;
-	 	rdfs:comment "An actuator corresponds only to an instance that is a subclass of sosa:ActuatableProperty."@en ;
+	 	rdfs:comment "An actuator corresponds only to an instance of sosa:ActuatableProperty."@en ;
 		sh:class sosa:ActuatableProperty ;
 	];
 	
