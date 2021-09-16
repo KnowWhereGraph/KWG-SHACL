@@ -23,6 +23,7 @@ sosa-shacl:ObservationConstraint
 			rdfs:comment "An observation can only be made by instance of class sosa:Sensor."@en ;
 		 	sh:class sosa:Sensor ;			
 			]
+        )
 	] ;
 	sh:property [
 	 	sh:path sosa:usedProcedure  ;
