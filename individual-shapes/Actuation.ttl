@@ -8,7 +8,7 @@
 @prefix time: <http://www.w3.org/2006/time#> .
 
 ### Shape for class sosa:Actuation
-sosa-shacl:Actuation
+sosa-shacl:ActuationConstraint
 	a sh:NodeShape ;
 	sh:targetClass sosa:Actuation ;
 	
@@ -49,6 +49,6 @@ sosa-shacl:Actuation
 	 	sh:path sosa:resultTime ;
 	 	rdfs:comment "An actuation has exactly one and only one result time."@en ;
 		sh:minCount 1 ; 
-		sh:minCount 1 ; 
+		sh:maxCount 1 ; 
 	].
 	
