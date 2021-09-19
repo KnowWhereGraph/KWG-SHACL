@@ -6,9 +6,10 @@
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
 @prefix sosa-shacl: <http://stko-kwg.geog.ucsb.ed/sosa-shacl/> .
 @prefix time: <http://www.w3.org/2006/time#> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
 
-### Shape for class sosa:Actuator
-sosa-shacl:SampleConstraint
+### Shape for class sosa:Actuator 
+sosa-shacl:ActuatorConstraint
 	a sh:NodeShape ;
 	sh:targetClass sosa:Actuator ;
 	

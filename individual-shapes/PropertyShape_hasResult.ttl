@@ -1,0 +1,15 @@
+#### These are SHACL shapes for the SOSA ontology -- sosa:hasResult####
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix sosa-shacl: <http://stko-kwg.geog.ucsb.ed/sosa-shacl/> .
+
+sosa-shacl:hasResultPropertyShape
+	a sh:PropertyShape ;
+	sh:path sosa:hasResult ;
+	sh:description "We need at most one result." ;
+  sh:maxCount 1 .
+## not sure whether we need domain and range constraints and how to do so.
+

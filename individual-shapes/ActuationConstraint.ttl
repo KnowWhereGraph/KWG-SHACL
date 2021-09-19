@@ -8,7 +8,7 @@
 @prefix time: <http://www.w3.org/2006/time#> .
 
 ### Shape for class sosa:Actuation
-sosa-shacl:SampleConstraint
+sosa-shacl:ActuationConstraint
 	a sh:NodeShape ;
 	sh:targetClass sosa:Actuation ;
 	
@@ -35,16 +35,24 @@ sosa-shacl:SampleConstraint
 	];
 	sh:property [
 	 	sh:path sosa:actsOnProperty ;
-	 	rdfs:comment "An actuation acts on atleast one property that is an instance of sosa:ActuatableProperty."@en ;
+	 	rdfs:comment "An actuation acts atleast one property that is an instance of sosa:ActuatableProperty."@en ;
 		sh:class sosa:ActuatableProperty ;
 		sh:minCount 1 ; 
 	];
 	sh:property [
-	 	sh:path sosa:hasResult ;
-	 	rdfs:comment "An actuation acts on atleast one result that is an instance of sosa:Result."@en ;
-		sh:class sosa:Result ;
-		sh:minCount 1 ; 
-	];
+		rdfs:comment "An actuation has to have at least one hasResult or hasSimpleResult, but not neither."@en ;
+		sh:or (
+			[
+			sh:path sosa:hasResult ;
+		 	sh:minCount 1 ;
+		 	sh:class sosa:Result ; 
+			]
+			[
+			sh:path sosa:hasSimpleResult ;
+			sh:minCount 1 ;
+			] 		   
+		) 	
+	] ;
 	sh:property [
 	 	sh:path sosa:resultTime ;
 	 	rdfs:comment "An actuation has exactly one and only one result time."@en ;
