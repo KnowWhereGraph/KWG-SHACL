@@ -16,6 +16,6 @@ sosa-shacl:madeBySensorDomainConstraint
 
 sosa-shacl:madeBySensorRangeConstraint
 	a sh:PropertyShape ;
-	sh:objectSubjectsOf sh:madeBySensor ;
+	sh:targetObjectsOf sh:madeBySensor ;
 	rdfs:comment "We restrict the range of sosa:madeBySensor to sosa:BySensor" ;
 	sh:class sosa:Sensor .

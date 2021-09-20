@@ -16,6 +16,6 @@ sosa-shacl:madeByActuatorDomainConstraint
 
 sosa-shacl:madeByActuatorRangeConstraint
 	a sh:PropertyShape ;
-	sh:objectSubjectsOf sh:madeByActuator ;
+	sh:targetObjectsOf sh:madeByActuator ;
 	rdfs:comment "We restrict the range of sosa:madeByActuator to sosa:Actuator" ;
 	sh:class sosa:Actuator .

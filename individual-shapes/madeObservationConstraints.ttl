@@ -16,6 +16,6 @@ sosa-shacl:madeObservationDomainConstraint
 
 sosa-shacl:madeObservationRangeConstraint
 	a sh:PropertyShape ;
-	sh:objectSubjectsOf sh:madeObservation ;
+	sh:targetObjectsOf sh:madeObservation ;
 	rdfs:comment "We restrict the range of sosa:madeObservation to sosa:Observation" ;
 	sh:class sosa:Observation .

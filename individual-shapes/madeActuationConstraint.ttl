@@ -16,6 +16,6 @@ sosa-shacl:madeActuationConstraint
 
 sosa-shacl:madeActuationRangeConstraint
 	a sh:PropertyShape ;
-	sh:objectSubjectsOf sh:madeActuation ;
+	sh:targetObjectsOf sh:madeActuation ;
 	rdfs:comment "We restrict the range of sosa:madeActuation to sosa:Actuation" ;
 	sh:class sosa:Actuation .

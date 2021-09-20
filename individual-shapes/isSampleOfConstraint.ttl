@@ -16,6 +16,6 @@ sosa-shacl:isSampleOfDomainConstraint
 
 sosa-shacl:isSampleOfRangeConstraint
 	a sh:PropertyShape ;
-	sh:objectSubjectsOf sh:isSampleOf ;
+	sh:targetObjectsOf sh:isSampleOf ;
 	rdfs:comment "We restrict the range of sosa:isSampleOf to sosa:FeatureOfInterest" ;
 	sh:class sosa:FeatureOfInterest .

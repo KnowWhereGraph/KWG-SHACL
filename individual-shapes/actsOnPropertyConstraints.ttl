@@ -16,6 +16,6 @@ sosa-shacl:actsOnPropertyDomainConstraint
 
 sosa-shacl:actsOnPropertyRangeConstraint
 	a sh:PropertyShape ;
-	sh:objectSubjectsOf sh:actsOnProperty ;
+	sh:targetObjectsOf sh:actsOnProperty ;
 	rdfs:comment "We restrict the range of sosa:actsOnProperty to sosa:ActuatableProperty" ;
 	sh:class sosa:ActuatableProperty .

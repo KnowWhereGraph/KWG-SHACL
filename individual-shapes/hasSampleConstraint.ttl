@@ -16,6 +16,6 @@ sosa-shacl:hasSampleDomainConstraint
 
 sosa-shacl:hasSampleRangeConstraint
 	a sh:PropertyShape ;
-	sh:objectSubjectsOf sh:hasSample ;
+	sh:targetObjectsOf sh:hasSample ;
 	rdfs:comment "We restrict the range of sosa:hasSample to sosa:Sample" ;
 	sh:class sosa:Sample .
