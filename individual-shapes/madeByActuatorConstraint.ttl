@@ -1,0 +1,21 @@
+#### These are SHACL shapes for the SOSA ontology -- sosa:madeByActuator####
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix sosa-shacl: <http://stko-kwg.geog.ucsb.ed/sosa-shacl/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+
+### Shape for class sosa:madeByActuator
+sosa-shacl:madeByActuatorDomainConstraint
+	a sh:NodeShape ;
+	sh:targetSubjectsOf sh:madeByActuator ;
+	rdfs:comment "We restrict the domain of sosa:madeByActuator to sosa:Actuation" ;
+	sh:class sosa:Actuation .
+
+sosa-shacl:madeByActuatorRangeConstraint
+	a sh:PropertyShape ;
+	sh:objectSubjectsOf sh:madeByActuator ;
+	rdfs:comment "We restrict the range of sosa:madeByActuator to sosa:Actuator" ;
+	sh:class sosa:Actuator .
