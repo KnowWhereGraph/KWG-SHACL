@@ -7,7 +7,7 @@
 @prefix sosa-shacl: <http://stko-kwg.geog.ucsb.ed/sosa-shacl/> .
 @prefix time: <http://www.w3.org/2006/time#> .
 
-### Shape for property sosa:hasFeatureOfInterest
+### Shapes for property sosa:hasFeatureOfInterest
 sosa-shacl:hasFeatureOfInterestConstraint 
     a sh:PropertyShape ;
 	sh:targetClass sosa:Observation, sosa:Actuation, sosa:Sampling ;

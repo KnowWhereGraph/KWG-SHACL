@@ -7,7 +7,7 @@
 @prefix sosa-shacl: <http://stko-kwg.geog.ucsb.ed/sosa-shacl/> .
 @prefix time: <http://www.w3.org/2006/time#> .
 
-### Shape for class sosa:isActedOnBy
+### Shapes for class sosa:isActedOnBy
 sosa-shacl:isActedOnByDomainConstraint
 	a sh:PropertyShape ;
 	sh:targetSubjectsOf sh:isActedOnBy ;

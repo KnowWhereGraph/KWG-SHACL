@@ -7,7 +7,7 @@
 @prefix sosa-shacl: <http://stko-kwg.geog.ucsb.ed/sosa-shacl/> .
 @prefix time: <http://www.w3.org/2006/time#> .
 
-### Shape for property sosa:usedProcedure
+### Shapes for property sosa:usedProcedure
 sosa-shacl:usedProcedureDomainConstraint 
     a sh:PropertyShape ;
 	sh:targetSubjectsOf sosa:usedProcedure ;

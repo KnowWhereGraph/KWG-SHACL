@@ -7,7 +7,7 @@
 @prefix sosa-shacl: <http://stko-kwg.geog.ucsb.ed/sosa-shacl/> .
 @prefix time: <http://www.w3.org/2006/time#> .
 
-### Shape for class sosa:hasSample
+### Shapes for class sosa:hasSample
 sosa-shacl:hasSampleDomainConstraint
 	a sh:PropertyShape ;
 	sh:targetSubjectsOf sh:hasSample ;
