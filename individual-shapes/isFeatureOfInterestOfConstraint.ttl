@@ -16,6 +16,6 @@ sosa-shacl:isFeatureOfInterestOfConstraint
 		sh:or (
 			[ sh:class sosa:Observation ]
 			[ sh:class sosa:Actuation ]
-			[ sh:calss sosa:Sampling ]
+			[ sh:class sosa:Sampling ]
 		)
 	] .

@@ -1,0 +1,29 @@
+### These are SHACL shapes for the SOSA ontology -- sosa:hosts ####
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix sosa-shacl: <http://stko-kwg.geog.ucsb.ed/sosa-shacl/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+
+### Shape for property sosa:hosts
+sosa-shacl:hostsDomainConstraint 
+    a sh:NodeShape ;
+	sh:targetSubjectsOf sosa:hosts ;
+	rdfs:comment "We restrict the domain of sosa:hosts to sosa:Platform" ;
+	sh.:class  	sosa:Platform .
+	
+
+sosa-shacl:hostsRangeConstraint 
+    a sh:NodeShape ;
+	sh:targetObjectsOf sosa:hosts ;
+	rdfs:comment "We restrict the range of sosa:hosts to sosa:Actuator, sosa:Sensor, sosa:Sampler, or sosa:Platform" ;
+	sh:or (
+			[ sh:class sosa:Actuator ]
+			[ sh:class sosa:Sensor ]
+			[ sh:class sosa:Sampler ]
+			[ sh:class sosa:Platform ]
+		).
+
+### TODO:  how to express sosa:hosts is Sub property of Chain  ssn:inDeployment o ssn:deployedSystem

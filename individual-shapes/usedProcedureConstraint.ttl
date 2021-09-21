@@ -1,0 +1,25 @@
+### These are SHACL shapes for the SOSA ontology -- sosa:usedProcedure####
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix sosa-shacl: <http://stko-kwg.geog.ucsb.ed/sosa-shacl/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+
+### Shape for property sosa:usedProcedure
+sosa-shacl:usedProcedureDomainConstraint 
+    a sh:NodeShape ;
+	sh:targetSubjectsOf sosa:usedProcedure ;
+	rdfs:comment "We restrict the domain of sosa:usedProcedure to sosa:Actuation, sosa:Observation, sosa:Sampling" ;
+	sh:or (
+			[ sh:class sosa:Actuation ]
+			[ sh:class sosa:Observation ]
+			[ sh:class sosa:Sampling ]
+		).
+
+sosa-shacl:usedProcedureRangeConstraint 
+    a sh:NodeShape ;
+	sh:targetObjectsOf sosa:usedProcedure ;
+	rdfs:comment "We restrict the range of sosa:usedProcedure to sosa:Procedure" ;
+	sh:class sosa:Procedure .
