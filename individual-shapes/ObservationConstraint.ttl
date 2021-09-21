@@ -14,67 +14,38 @@ sosa-shacl:ObservationConstraint
 
 	sh:property [
 		sh:path sosa:madeBySensor ;
-		sh:and (
-			[
-			rdfs:comment "An observation is made exactly one sensor."@en ;
-		 	sh:maxCount 1 ;
-		 	sh:minCount 1 ;
-			]
-			[
-			rdfs:comment "An observation can only be made by instance of class sosa:Sensor."@en ;
-		 	sh:class sosa:Sensor ;			
-			]
-        )
+		rdfs:comment "An observation is made by at most one sensor and the sensor can be implicit (unknown)."@en ;
+		sh:maxCount 1 ;
+		sh:class sosa:Sensor ;
 	] ;
+
 	sh:property [
 	 	sh:path sosa:usedProcedure  ;
-	 	rdfs:comment "An observation can only use instance from class sosa:Procedure as the procedure."@en ;
+	 	rdfs:comment "An observation can only made via a procedure."@en ;
 		sh:class sosa:Procedure ;	
 	] ;
 	sh:property [
 	 	sh:path sosa:hasFeatureOfInterst ;
-	 	sh:and (
-		 	[
-		 	rdfs:comment "An observation is made for exactly one feature of interest."@en ;
-		 	sh:maxCount 1 ; 
-		 	sh:minCount 1 ;
-		 	]
-		 	[
-		 	rdfs:comment "The feature of interest of an observation is from the class sosa:FeatureOfInterest."@en ; 
-		 	sh:class sosa:FeatureOfInterest ;
-		 	]
-		) 
+	 	rdfs:comment "An observation is made on one and exactly one feature of interest."@en ;
+		sh:maxCount 1 ; 
+		sh:minCount 1 ;
+		sh:class sosa:FeatureOfInterest ;
 	] ;
 	sh:property [
 		sh:path sosa:observedProperty ;
-		sh:and (
-			[
-			rdfs:comment "An observation is made for exactly one obervable property."@en ;
-		 	sh:maxCount 1 ;
-		 	sh:minCount 1 ; 
-			]
-			[
-			rdfs:comment "An observable property belongs to the class sosa:ObservableProperty."@en ;
-		 	sh:class sosa:ObservableProperty ;			
-			]		
-		) 
+		rdfs:comment "An observation is about one and only one obervable property."@en ;
+		sh:maxCount 1 ;
+		sh:minCount 1 ; 
+		sh:class sosa:ObservableProperty ;			
 	] ;
 	sh:property [
 		sh:path ssn:wasOriginatedBy ;
-		sh:and (
-			[
-			rdfs:comment "An observation is originated by exactly one instance."@en ;
-		 	sh:maxCount 1 ;
-		 	sh:minCount 1 ; 
-			]
-			[
-			rdfs:comment "An observation should always be originated by instances of ssn:Stimulus."@en ;
-		 	sh:class ssn:Stimulus ;			
-			]		
-		) 
+		rdfs:comment "An observation is originated from at most one stimulus and the stimulus can be implicit (unknown)."@en ;
+		sh:maxCount 1 ;
+		sh:class ssn:Stimulus ;			
 	] ;
 	sh:property [
-	    rdfs:comment "An observation has to have either one phenomenonTime or one resultTime."@en ;
+	    rdfs:comment "An observation has to have one phenomenon time or one result time. Having both is OK but the result time has to be latter than the phenomenon time."@en ;
 	    ### a missing constraint here is that if both phenomenonTime and resultTime exist, resultTime 
 	    ### has to be later than phenomenon time  
 		sh:or (
@@ -93,7 +64,7 @@ sosa-shacl:ObservationConstraint
 		) 
 	] ;
 	sh:property [
-		rdfs:comment "An observation has to have at least one hasResult or hasSimpleResult, but not neither."@en ;
+		rdfs:comment "An observation has to have a result or a simple result. Having both is OK."@en ;
 		sh:or (
 			[
 			sh:path sosa:hasResult ;

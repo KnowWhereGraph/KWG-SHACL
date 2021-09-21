@@ -1,4 +1,4 @@
-#### These are SHACL shapes for the SOSA ontology -- sosa:Platform####
+#### These are SHACL shapes for the SOSA ontology -- sosa:Platform ####
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
@@ -13,19 +13,12 @@ sosa-shacl:PlatformConstraint
 	sh:targetClass sosa:Platform ;
 	sh:property [
 		sh:path sosa:hosts ;
-		sh:and (
-			[
-			rdfs:comment "We constrain the filler of sosa:hosts to ssn:System." ;
-			sh:class ssn:System ;
-			]
-		)
-	]
+		rdfs:comment "A platform only hosts a system."@en ;
+		sh:class ssn:System ;
+		
+	] ;
 	sh:property [
 		sh:path ssn:inDeployment ;
-		sh:and (
-			[
-			rdfs:comment "We constrain the filler of ssn:inDeployment to ssn:Deployment." ;
-			sh:class ssn:Deployment
-			]
-		)
+		rdfs:comment "A platform is in deployment of a deployment."@en ;
+		sh:class ssn:Deployment ;
 	] .

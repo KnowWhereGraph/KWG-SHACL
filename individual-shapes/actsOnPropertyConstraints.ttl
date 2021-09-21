@@ -9,13 +9,13 @@
 
 ### Shape for class sosa:actsOnProperty
 sosa-shacl:actsOnPropertyDomainConstraint
-	a sh:PropertyShape ;
+	a sh:NodeShape ;
 	sh:targetSubjectsOf sh:actsOnProperty ;
 	rdfs:comment "We restrict the domain of sosa:actsOnProperty to sosa:Actuation" ;
 	sh:class sosa:Actuation .
 
 sosa-shacl:actsOnPropertyRangeConstraint
 	a sh:PropertyShape ;
-	sh:targetObjectsOf sh:actsOnProperty ;
+	sh:objectSubjectsOf sh:actsOnProperty ;
 	rdfs:comment "We restrict the range of sosa:actsOnProperty to sosa:ActuatableProperty" ;
 	sh:class sosa:ActuatableProperty .

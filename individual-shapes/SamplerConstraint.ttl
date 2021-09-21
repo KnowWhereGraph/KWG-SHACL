@@ -14,12 +14,12 @@ sosa-shacl:SampleConstraint
 	
 	sh:property [
 		sh:path ssn:implements ;
-		rdfs:comment "An Sampler must implement atleast one sampling procedure."@en ;
+		rdfs:comment "A sampler has to implement at least one sampling procedure."@en ;
 		sh:minCount 1 ; 				
 	] ;
 	sh:property [
 		sh:path sosa:madeSampling ;
-		rdfs:comment "An Sampler can only make a sampling that is instance of class sosa:Sampling."@en ;
+		rdfs:comment "A sampler makes sampling."@en ;
 		sh:class sosa:Sampling ;					
 	] .
 	

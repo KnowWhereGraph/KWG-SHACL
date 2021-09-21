@@ -14,20 +14,13 @@ sosa-shacl:FeatureOfInterestConstraint
 
 	sh:property [
 		sh:path sosa:hasSample ;
-		rdfs:comment "The sample of a sosa:FeatureOfInterest instance has to be from the class sosa:Sample."@en ;
+		rdfs:comment "The sample of a feature of interest has to be from the class sosa:Sample."@en ;
 		sh:class sosa:Sample ;				
 	] ;
 
 	sh:property [
 		sh:path ssn:hasProperty ;
-		sh:and (
-		 	[
-		 	rdfs:comment "The property of a sosa:FeatureOfInterest instance has to be from the class ssn:Property."@en ;
-		 	sh:class ssn:Property ;
-		 	]
-		 	[
-		 	rdfs:comment "The property of a sosa:FeatureOfInterest  instance should have at least one value of the class ssn:Property."@en ; 
-		 	sh:minCount 1 ;	
-		 	]
-		)		
+		rdfs:comment "The property of a feature of interest has to be from the class ssn:Property."@en ;
+		sh:class ssn:Property ;
+		#sh:minCount 1 ;  ## there are cases where a feature of interst has no property
 	] .

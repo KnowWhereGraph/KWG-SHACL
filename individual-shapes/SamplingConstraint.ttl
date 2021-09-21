@@ -8,34 +8,34 @@
 @prefix time: <http://www.w3.org/2006/time#> .
 
 ### Shape for class sosa:Sampling
-sosa-shacl:SampleConstraint
+sosa-shacl:SamplingConstraint
 	a sh:NodeShape ;
 	sh:targetClass sosa:Sampling ;
 	
 	sh:property [
 		sh:path sosa:madeBySampler ;
-		rdfs:comment "A sampling act is made by one and only one sampler that is an instance of sosa:Sampler."@en ;
+		rdfs:comment "A sampling act is made by one and only one sampler."@en ;
 		sh:class sosa:Sampler ;	
-		sh:minCount 1 ;		
+		#sh:minCount 1 ; ## the sampler might be implicit	
 		sh:maxCount 1 ;
 	] ;
 	
 	sh:property [
 		sh:path sosa:hasFeatureOfInterest ;
-		rdfs:comment "A sampling act is carried out for one and only one feature that is an instance of sosa:FeatureOfInterest."@en ;
+		rdfs:comment "A sampling act is carried out for one and only one feature of interest."@en ;
 		sh:class sosa:FeatureOfInterest ;	
 		sh:minCount 1 ;		
 		sh:maxCount 1 ;
 	] ;
 	sh:property [
 		sh:path sosa:hasResult ;
-		rdfs:comment "A sampling act always results in atleast one sample that is an instance of sosa:Sample."@en ;
+		rdfs:comment "A sampling act always results in at least one sample."@en ;
 		sh:class sosa:Sample ;	
 		sh:minCount 1 ;		
 	] ;
 	sh:property [
 		sh:path sosa:usedProcedure ;
-		rdfs:comment "A sampling act uses a procedure that is an instance of sosa:Procedure."@en ;
+		rdfs:comment "A sampling act applies a procedure."@en ;
 		sh:class sosa:Procedure ;	
 	];
 	sh:property [

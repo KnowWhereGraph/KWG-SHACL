@@ -13,13 +13,13 @@ sosa-shacl:SampleConstraint
 	sh:targetClass sosa:Sample ;
 	sh:property [
 	 	sh:path sosa:isResultOf ;
-	 	rdfs:comment "A Sample is the result of at least one sampling act that is an instance of sosa:Sampling." ;
+	 	rdfs:comment "A sample is the result of at least one sampling act."@en ;
 		sh:class sosa:Sampling ;
 		sh:minCount 1 ; 
 	] ;
 	sh:property [
 	 	sh:path sosa:isSampleOf ;
-	 	rdfs:comment "A Sample is representative of at least one feature of interest that is an instance of sosa:FeatureOfInterest." ;
+	 	rdfs:comment "A sample is representative of at least one feature of interest."@en ;
 		sh:class sosa:FeatureOfInterest ;
 		sh:minCount 1 ; 
 	] .

@@ -1,4 +1,4 @@
-#### These are SHACL shapes for the SOSA ontology -- sosa:Actuator####
+#### These are SHACL shapes for the SOSA ontology -- sosa:ActuatorableProperty ####
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
@@ -7,7 +7,8 @@
 @prefix sosa-shacl: <http://stko-kwg.geog.ucsb.ed/sosa-shacl/> .
 @prefix time: <http://www.w3.org/2006/time#> .
 
-### Shape for class sosa:Actuator
+### Shape for class sosa:ActuatorableProperty 
+
 sosa-shacl:ActuatablePropertyConstraint
 	a sh:NodeShape ;
 	sh:targetClass sosa:ActuatableProperty ;

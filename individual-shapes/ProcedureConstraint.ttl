@@ -11,30 +11,19 @@
 sosa-shacl:ProcedureConstraint
 	a sh:NodeShape ;
 	sh:targetClass ssn:Procedure ;
+	
 	sh:property [
 		sh:path ssn:hasInput ;
-		sh:and (
-			[
-			rdfs:comment "We constrain the filler of ssn:hasInput to ssn:Input." ;
-			sh:class ssn:Input
-			]
-		)
+		rdfs:comment "A procdedure has input."@en ;
+		sh:class ssn:Input ;	
 	] ;
 	sh:property [
 		sh:path ssn:hasOutput ;
-		sh:and (
-			[
-			rdfs:comment "We constrain the filler of ssn:hasOutput to ssn:Output." ;
-			sh:class ssn:Output
-			]
-		)
+		rdfs:comment "A procedure has output."@en ;
+		sh:class ssn:Output ;
 	] ;
 	sh:property [
 		sh:path ssn:implementedBy ;
-		sh:and (
-			[
-			rdfs:comment "We constrain the filler of ssn:implementedBy to ssn:System." ;
-			sh:class ssn:System
-			]
-		)
+		rdfs:comment "A procedure is implemented by a system."@en ;
+		sh:class ssn:System ;
 	] .
