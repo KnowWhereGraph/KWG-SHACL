@@ -6,10 +6,22 @@
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
 @prefix sosa-shacl: <http://stko-kwg.geog.ucsb.ed/sosa-shacl/> .
 
-sosa-shacl:hasResultPropertyShape
+### Shapes for property sosa:hosts
+sosa-shacl:hasResultDomainConstraint
 	a sh:PropertyShape ;
-	sh:path sosa:hasResult ;
-	sh:description "We need at most one result." ;
-    sh:maxCount 1 .
-## not sure whether we need domain and range constraints and how to do so.
+	sh:targetObjectsOf sosa:hasResult ;
+	rdfs:comment "We restrict the domain of sosa:hosts to sosa:Actuation, sosa:Observation, sosa:Sampling" ;
+	sh:or (
+			[ sh:class sosa:Actuation ]
+			[ sh:class sosa:Observation ]
+			[ sh:class sosa:Sampling ]
+		  ) .
 
+sosa-shacl:hasResultRangeConstraint
+	a sh:PropertyShape ;
+	sh:targetObjectsOf sosa:hasResult ;
+	rdfs:comment "We restrict the range of sosa:hosts to sosa:Result, sosa:Sample" ;
+	sh:or (
+			[ sh:class sosa:Result ]
+			[ sh:class sosa:Sample ]
+		  ) .
