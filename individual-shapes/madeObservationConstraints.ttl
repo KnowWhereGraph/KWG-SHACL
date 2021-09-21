@@ -10,12 +10,12 @@
 ### Shape for class sosa:madeObservation
 sosa-shacl:madeObservationDomainConstraint
 	a sh:NodeShape ;
-	sh:targetSubjectsOf sh:madeObservation ;
+	sh:targetSubjectsOf sosa:madeObservation ;
 	rdfs:comment "We restrict the domain of sosa:madeObservation to sosa:Sensor" ;
 	sh:class sosa:Sensor .
 
 sosa-shacl:madeObservationRangeConstraint
 	a sh:PropertyShape ;
-	sh:objectSubjectsOf sh:madeObservation ;
+	sh:objectSubjectsOf sosa:madeObservation ;
 	rdfs:comment "We restrict the range of sosa:madeObservation to sosa:Observation" ;
 	sh:class sosa:Observation .

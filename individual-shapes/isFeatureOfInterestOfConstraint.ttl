@@ -8,7 +8,7 @@
 @prefix time: <http://www.w3.org/2006/time#> .
 
 ### Shape for property sosa:isFeatureOfInterestOf
-sosa-shacl:sosa:isFeatureOfInterestOfConstraint 
+sosa-shacl:isFeatureOfInterestOfConstraint 
     a sh:NodeShape ;
 	sh:targetClass sosa:FeatureOfInterest, sosa:Sample ;
 	sh:property [
