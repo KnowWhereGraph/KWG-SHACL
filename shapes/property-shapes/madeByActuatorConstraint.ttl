@@ -9,7 +9,7 @@
 
 ### Shape for class sosa:madeByActuator
 sosa-shacl:madeByActuatorDomainConstraint
-	a sh:NodeShape ;
+	a sh:PropertyShape ;
 	sh:targetSubjectsOf sh:madeByActuator ;
 	rdfs:comment "We restrict the domain of sosa:madeByActuator to sosa:Actuation" ;
 	sh:class sosa:Actuation .

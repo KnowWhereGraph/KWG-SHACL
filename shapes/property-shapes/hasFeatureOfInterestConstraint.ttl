@@ -9,7 +9,7 @@
 
 ### Shape for property sosa:hasFeatureOfInterest
 sosa-shacl:hasFeatureOfInterestConstraint 
-    a sh:NodeShape ;
+    a sh:PropertyShape ;
 	sh:targetClass sosa:Observation, sosa:Actuation, sosa:Sampling ;
 	sh:property [
 		sh:path hasFeatureOfInterest ;

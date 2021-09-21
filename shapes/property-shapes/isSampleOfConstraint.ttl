@@ -9,7 +9,7 @@
 
 ### Shape for class sosa:isSampleOf
 sosa-shacl:isSampleOfDomainConstraint
-	a sh:NodeShape ;
+	a sh:PropertyShape ;
 	sh:targetSubjectsOf sh:isSampleOf ;
 	rdfs:comment "We restrict the domain of sosa:isSampleOf to sosa:Sample" ;
 	sh:class sosa:Sample .

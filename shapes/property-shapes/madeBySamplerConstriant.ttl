@@ -9,13 +9,13 @@
 
 ### Shape for property sosa:madeBySampler
 sosa-shacl:madeBySamplerDomainConstraint 
-    a sh:NodeShape ;
+    a sh:PropertyShape ;
 	sh:targetSubjectsOf sosa:madeBySampler ;
 	rdfs:comment "We restrict the domain of sosa:madeBySampler to sosa:Sampling" ;
 	sh:class sosa:Sampling .
 
 sosa-shacl:madeBySamplerRangeConstraint 
-    a sh:NodeShape ;
+    a sh:PropertyShape ;
 	sh:targetObjectsOf sosa:madeBySampler ;
 	rdfs:comment "We restrict the range of sosa:madeBySampler to sosa:Sampler" ;
 	sh:class sosa:Sampler .

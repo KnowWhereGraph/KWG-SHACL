@@ -9,7 +9,7 @@
 
 ### Shape for class sosa:madeActuation
 sosa-shacl:madeActuationConstraint
-	a sh:NodeShape ;
+	a sh:PropertyShape ;
 	sh:targetSubjectsOf sh:madeActuation ;
 	
 	sh:property [

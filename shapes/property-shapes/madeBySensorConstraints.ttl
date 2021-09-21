@@ -9,7 +9,7 @@
 
 ### Shape for class sosa:madeBySensor
 sosa-shacl:madeBySensorDomainConstraint
-	a sh:NodeShape ;
+	a sh:PropertyShape ;
 	sh:targetSubjectsOf sh:madeBySensor ;
 	rdfs:comment "We restrict the domain of sosa:madeBySensor to sosa:Observation" ;
 	sh:class sosa:Observation .
