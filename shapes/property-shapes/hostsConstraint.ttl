@@ -25,5 +25,3 @@ sosa-shacl:hostsRangeConstraint
 			[ sh:class sosa:Sampler ]
 			[ sh:class sosa:Platform ]
 		).
-
-### TODO:  how to express sosa:hosts is Sub property of Chain  ssn:inDeployment o ssn:deployedSystem
