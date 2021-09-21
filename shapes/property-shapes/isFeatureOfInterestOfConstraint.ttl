@@ -8,14 +8,12 @@
 @prefix time: <http://www.w3.org/2006/time#> .
 
 ### Shape for property sosa:isFeatureOfInterestOf
-sosa-shacl:isFeatureOfInterestOfConstraint 
+sosa-shacl:isFeatureOfInterestOfConstraint
     a sh:PropertyShape ;
-	sh:targetClass sosa:FeatureOfInterest, sosa:Sample ;
-	sh:property [
-		sh:path sosa:isFeatureOfInterestOf ;
-		sh:or (
+	sh:targetObjectsOf sosa:hosts ;
+	rdfs:comment "We restrict the range of sosa:hosts to sosa:Observation, sosa:Actuation, sosa:Sampling" ;
+	sh:or (
 			[ sh:class sosa:Observation ]
 			[ sh:class sosa:Actuation ]
 			[ sh:class sosa:Sampling ]
-		)
-	] .
+		  ) .
