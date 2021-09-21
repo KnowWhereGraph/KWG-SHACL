@@ -17,7 +17,7 @@ sosa-shacl:isHostedByDomainConstraint
 			[ sh:class sosa:Sensor ]
 			[ sh:class sosa:Sampler ]
 			[ sh:class sosa:Platform ]
-		).
+		  ) .
 
 sosa-shacl:isHostedByRangeConstraint 
     a sh:PropertyShape ;

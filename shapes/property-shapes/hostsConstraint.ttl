@@ -13,7 +13,6 @@ sosa-shacl:hostsDomainConstraint
 	sh:targetSubjectsOf sosa:hosts ;
 	rdfs:comment "We restrict the domain of sosa:hosts to sosa:Platform" ;
 	sh.:class  	sosa:Platform .
-	
 
 sosa-shacl:hostsRangeConstraint 
     a sh:PropertyShape ;
@@ -24,4 +23,4 @@ sosa-shacl:hostsRangeConstraint
 			[ sh:class sosa:Sensor ]
 			[ sh:class sosa:Sampler ]
 			[ sh:class sosa:Platform ]
-		).
+		  ) .
