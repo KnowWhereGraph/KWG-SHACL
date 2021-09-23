@@ -1,0 +1,21 @@
+### These are SHACL shapes for the SOSA ontology -- sosa:isObervedBy ####
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix sosa-shacl: <http://stko-kwg.geog.ucsb.ed/sosa-shacl/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+
+### Shapes for property sosa:isObservedBy
+sosa-shacl:isObservedByDomainConstraint 
+    a sh:PropertyShape ;
+	sh:targetSubjectsOf sosa:isObservedBy ;
+	rdfs:comment "We restrict the domain of sosa:isObservedBy to sosa:Sensor" ;
+	sh:class sosa:ObservableProperty .
+
+sosa-shacl:isObservedByRangeConstraint 
+    a sh:PropertyShape ;
+	sh:targetObjectsOf sosa:isObservedBy ;
+	rdfs:comment "We restrict the range of sosa:isObservedBy to sosa:ObservableProperty" ;
+	sh:class sosa:Sensor .

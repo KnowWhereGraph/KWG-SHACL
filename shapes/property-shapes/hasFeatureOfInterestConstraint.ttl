@@ -10,7 +10,7 @@
 ### Shapes for property sosa:hasFeatureOfInterest
 sosa-shacl:hasFeatureOfInterestOfDomainConstraint
     a sh:PropertyShape ;
-	sh:targetObjectsOf sosa:hasFeatureOfInterest ;
+	sh:targetSubjectsOf sosa:hasFeatureOfInterest ;
 	rdfs:comment "We restrict the domain of sosa:hasFeatureOfInterest to sosa:Observation, sosa:Actuation, sosa:Sampling" ;
 	sh:or (
 			[ sh:class sosa:Observation ]

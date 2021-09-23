@@ -1,0 +1,33 @@
+#### These are SHACL shapes for the SOSA ontology -- sosa:Actuator ####
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix sosa-shacl: <http://stko-kwg.geog.ucsb.ed/sosa-shacl/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+
+### Shape for class sosa:Actuator 
+sosa-shacl:ActuatorConstraint
+	a sh:NodeShape ;
+	sh:targetClass sosa:Actuator ;
+	
+	sh:property [
+	 	sh:path ssn:implements ;
+	 	rdfs:comment "An actuator implements at least one actuation."@en ;
+		sh:minCount 1 ; 
+	];
+	
+	sh:property [
+	 	sh:path ssn:forProperty ;
+	 	rdfs:comment "An actuator corresponds to the actuatable property."@en ;
+		sh:class sosa:ActuatableProperty ;
+	];
+	
+	sh:property [
+	 	sh:path sosa:madeActuation ;
+	 	rdfs:comment "A actuator makes actuation(s)."@en ;
+		sh:class sosa:Actuation ;
+	].
+	

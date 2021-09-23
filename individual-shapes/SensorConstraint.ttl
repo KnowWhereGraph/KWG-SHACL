@@ -26,7 +26,7 @@ sosa-shacl:SensorConstraint
 	] ;
 	sh:property [
 		sh:path sosa:madeObservation ;
-		rdfs:comment "A sensor makes observations."@en ;
+		rdfs:comment "A sensor makes observations." ;
 		sh:class sosa:Observation ;	
 	] .
 	

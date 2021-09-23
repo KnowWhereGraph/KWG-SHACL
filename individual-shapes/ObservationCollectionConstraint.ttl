@@ -1,0 +1,53 @@
+#### These are SHACL shapes for the SOSA ontology -- sosa:ObservationCollection####
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix sosa-shacl: <http://stko-kwg.geog.ucsb.ed/sosa-shacl/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+
+### Shapes for class sosa:ObservationCollection
+sosa-shacl:ObservationCollectionConstraint
+	a sh:NodeShape ;
+	sh:targetClass sosa:ObservationCollection ;
+	sh:property [
+		sh:path sosa:hasMember ;
+		rdfs:comment "We mandate the existence of a filler for sosa:hasMember." ;
+		sh:minCount 1 ;
+	] ;
+	sh:property [
+		sh:path sosa:hasFeatureOfInterest ;
+		rdfs:comment "We constrain the number of fillers of sosa:hasFeatureOfInterest, when the domain is sosa:ObservationCollection, to 1." ;
+		sh:maxCount 1 ;		
+	] ;
+	sh:property [
+		sh:path sosa:hasUltimateFeatureOfInterest ;
+		rdfs:comment "We constrain the number of fillers of sosa:hasUltimateFeatureOfInterest, when the domain is sosa:ObservationCollection, to 1." ;
+		sh:maxCount 1 ;			
+	] ;
+	sh:property [
+		sh:path sosa:madeBySensor ;
+		rdfs:comment "We constrain the number of fillers of sosa:madeBySensor, when the domain is sosa:ObservationCollection, to 1." ;
+		sh:maxCount 1 ;			
+	] ;
+	sh:property [
+		sh:path sosa:observedProperty ;
+		rdfs:comment "We constrain the number of fillers of sosa:observedProperty, when the domain is sosa:ObservationCollection, to 1." ;
+		sh:maxCount 1 ;			
+	] ;
+	sh:property [
+		sh:path sosa:phenomenonTime ;
+		rdfs:comment "We constrain the number of fillers of sosa:phenomenonTime, when the domain is sosa:ObservationCollection, to 1." ;
+		sh:maxCount 1 ;			
+	] ;
+	sh:property [
+		sh:path sosa:resultTime ;
+		rdfs:comment "We constrain the number of fillers of sosa:resultTime, when the domain is sosa:ObservationCollection, to 1." ;
+		sh:maxCount 1 ;			
+	] ;
+	sh:property [
+		sh:path sosa:usedProcedure ;
+		rdfs:comment "We constrain the number of fillers of sosa:usedProcedure, when the domain is sosa:ObservationCollection, to 1." ;
+		sh:maxCount 1 ;			
+	] .

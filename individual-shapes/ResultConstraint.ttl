@@ -16,8 +16,8 @@ sosa-shacl:ResultConstraint
 			rdfs:comment "A result is from at least one observation/actuation/sampling."@en ;
 			sh:minCount 1 ;
 			sh:or ( ## this might be the same to the property constraint of isResultOf (?)
-				[ sh:class sosa:Observation ]  # sh:class sosa:Observation ;  ## this overlaps with the ObservationConstraint 
-				[ sh:class sosa:Actuation ] 
-				[ sh:class sosa:Sampling ] 
+				[ sh:class sosa:Observation ;]  # sh:class sosa:Observation ;  ## this overlaps with the ObservationConstraint 
+				[ sh:class sosa:Actuation ;] 
+				[ sh:class sosa:Sampling ;] 
 			) ;
 		] .

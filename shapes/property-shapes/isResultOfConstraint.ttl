@@ -1,0 +1,28 @@
+### These are SHACL shapes for the SOSA ontology -- sosa:isResultOf####
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix sosa-shacl: <http://stko-kwg.geog.ucsb.ed/sosa-shacl/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+
+### Shapes for property sosa:isResultOf
+sosa-shacl:isResultOfDomainConstraint
+    a sh:PropertyShape ;
+	sh:targetSubjectsOf sosa:isResultOf ;
+	rdfs:comment "We restrict the domain of sosa:isResultOf to sosa:Result, sosa:Sample" ;
+	sh:or (
+			[ sh:class sosa:Result ]
+			[ sh:class sosa:Sample ]
+		  ) .
+
+sosa-shacl:isResultOfRangeConstraint
+    a sh:PropertyShape ;
+	sh:targetObjectsOf sosa:isResultOf ;
+	rdfs:comment "We restrict the range of sosa:isResultOf to sosa:Actuation, sosa:Observation, and sosa:Sampling";
+	sh:or (
+			[ sh:class sosa:Actuation ]
+			[ sh:class sosa:Observation ]
+			[ sh:class sosa:Sampling ]
+		  ) .

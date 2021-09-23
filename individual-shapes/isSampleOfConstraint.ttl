@@ -7,15 +7,15 @@
 @prefix sosa-shacl: <http://stko-kwg.geog.ucsb.ed/sosa-shacl/> .
 @prefix time: <http://www.w3.org/2006/time#> .
 
-### Shapes for class sosa:isSampleOf
+### Shape for class sosa:isSampleOf
 sosa-shacl:isSampleOfDomainConstraint
-	a sh:PropertyShape ;
-	sh:targetSubjectsOf sosa:isSampleOf ;
+	a sh:NodeShape ;
+	sh:targetSubjectsOf sh:isSampleOf ;
 	rdfs:comment "We restrict the domain of sosa:isSampleOf to sosa:Sample" ;
 	sh:class sosa:Sample .
 
 sosa-shacl:isSampleOfRangeConstraint
 	a sh:PropertyShape ;
-	sh:targetObjectsOf sosa:isSampleOf ;
+	sh:targetObjectsOf sh:isSampleOf ;
 	rdfs:comment "We restrict the range of sosa:isSampleOf to sosa:FeatureOfInterest" ;
 	sh:class sosa:FeatureOfInterest .

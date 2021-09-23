@@ -7,15 +7,15 @@
 @prefix sosa-shacl: <http://stko-kwg.geog.ucsb.ed/sosa-shacl/> .
 @prefix time: <http://www.w3.org/2006/time#> .
 
-### Shapes for class sosa:actsOnProperty
+### Shape for class sosa:actsOnProperty
 sosa-shacl:actsOnPropertyDomainConstraint
-	a sh:PropertyShape ;
-	sh:targetSubjectsOf sosa:actsOnProperty ;
+	a sh:NodeShape ;
+	sh:targetSubjectsOf sh:actsOnProperty ;
 	rdfs:comment "We restrict the domain of sosa:actsOnProperty to sosa:Actuation" ;
 	sh:class sosa:Actuation .
 
 sosa-shacl:actsOnPropertyRangeConstraint
 	a sh:PropertyShape ;
-	sh:targetObjectsOf sosa:actsOnProperty ;
+	sh:objectSubjectsOf sh:actsOnProperty ;
 	rdfs:comment "We restrict the range of sosa:actsOnProperty to sosa:ActuatableProperty" ;
 	sh:class sosa:ActuatableProperty .

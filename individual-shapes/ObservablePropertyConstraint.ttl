@@ -1,0 +1,18 @@
+#### These are SHACL shapes for the SOSA ontology ####
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix sosa-shacl: <http://stko-kwg.geog.ucsb.ed/sosa-shacl/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+
+### Shape for class sosa:ObservableProperty
+sosa-shacl:ObservablePropertyConstraint
+	a sh:NodeShape ;
+	sh:targetClass sosa:ObservableProperty ;
+	sh:property [
+		sh:path sosa:isObservedBy ;
+		rdfs:comment "An observable property can only be observed by instances from class sosa:Sensor."@en ;
+		sh:class sosa:Sensor ;				
+	] .

@@ -1,0 +1,25 @@
+### These are SHACL shapes for the SOSA ontology -- sosa:phenomenonTime ####
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix sosa-shacl: <http://stko-kwg.geog.ucsb.ed/sosa-shacl/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+
+### Shapes for property sosa:phenomenonTime
+sosa-shacl:phenomenonTimeDomainConstraint 
+    a sh:PropertyShape ;
+	sh:targetSubjectsOf sosa:phenomenonTime ;
+	rdfs:comment "We restrict the domain of sosa:phenomenonTime to sosa:Actuation, sosa:Observation, sosa:Sampling" ;
+	sh:or (
+		  [sh:class sosa:Actuation ]
+		  [sh:class sosa:Observation ]
+		  [sh:class sosa:Sampling ]
+		)  .
+
+sosa-shacl:phenomenonTimeRangeConstraint 
+    a sh:PropertyShape ;
+	sh:targetObjectsOf sosa:phenomenonTime ;
+	rdfs:comment "We restrict the range of sosa:phenomenonTime to time:TemporalEntity" ;
+	sh:class time:TemporalEntity .

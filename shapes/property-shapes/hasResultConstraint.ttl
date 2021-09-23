@@ -6,10 +6,10 @@
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
 @prefix sosa-shacl: <http://stko-kwg.geog.ucsb.ed/sosa-shacl/> .
 
-### Shapes for property sosa:hosts
+### Shapes for property sosa:hasResult
 sosa-shacl:hasResultDomainConstraint
 	a sh:PropertyShape ;
-	sh:targetObjectsOf sosa:hasResult ;
+	sh:targetSubjectsOf sosa:hasResult ;
 	rdfs:comment "We restrict the domain of sosa:hosts to sosa:Actuation, sosa:Observation, sosa:Sampling" ;
 	sh:or (
 			[ sh:class sosa:Actuation ]

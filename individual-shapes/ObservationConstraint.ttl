@@ -1,0 +1,79 @@
+#### These are SHACL shapes for the SOSA ontology ####
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix sosa-shacl: <http://stko-kwg.geog.ucsb.ed/sosa-shacl/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+
+### Shapes for class sosa:Observation 
+sosa-shacl:ObservationConstraint
+	a sh:NodeShape ;
+	sh:targetClass sosa:Observation ;
+
+	sh:property [
+		sh:path sosa:madeBySensor ;
+		rdfs:comment "An observation is made by at most one sensor and the sensor can be implicit (unknown)."@en ;
+		sh:maxCount 1 ;
+		sh:class sosa:Sensor ;
+	] ;
+
+	sh:property [
+	 	sh:path sosa:usedProcedure  ;
+	 	rdfs:comment "An observation can only made via a procedure."@en ;
+		sh:class sosa:Procedure ;	
+	] ;
+	sh:property [
+	 	sh:path sosa:hasFeatureOfInterst ;
+	 	rdfs:comment "An observation is made on one and exactly one feature of interest."@en ;
+		sh:maxCount 1 ; 
+		sh:minCount 1 ;
+		sh:class sosa:FeatureOfInterest ;
+	] ;
+	sh:property [
+		sh:path sosa:observedProperty ;
+		rdfs:comment "An observation is about one and only one obervable property."@en ;
+		sh:maxCount 1 ;
+		sh:minCount 1 ; 
+		sh:class sosa:ObservableProperty ;			
+	] ;
+	sh:property [
+		sh:path ssn:wasOriginatedBy ;
+		rdfs:comment "An observation is originated from at most one stimulus and the stimulus can be implicit (unknown)."@en ;
+		sh:maxCount 1 ;
+		sh:class ssn:Stimulus ;			
+	] ;
+	sh:property [
+	    rdfs:comment "An observation has to have one phenomenon time or one result time. Having both is OK but the result time has to be latter than the phenomenon time."@en ;
+	    ### a missing constraint here is that if both phenomenonTime and resultTime exist, resultTime 
+	    ### has to be later than phenomenon time  
+		sh:or (
+			[
+			sh:path sosa:phenomenonTime ;
+		 	sh:maxCount 1 ;
+		 	sh:minCount 1 ;
+		 	sh:class time:TemporalEntity ; 
+			]
+			[
+			sh:path sosa:resultTime ;
+			sh:maxCount 1 ;
+			sh:minCount 1 ;
+			sh:datatype xsd:dateTime ;
+			] 		   
+		) 
+	] ;
+	sh:property [
+		rdfs:comment "An observation has to have a result or a simple result. Having both is OK."@en ;
+		sh:or (
+			[
+			sh:path sosa:hasResult ;
+		 	sh:minCount 1 ;
+		 	sh:class sosa:Result ; 
+			]
+			[
+			sh:path sosa:hasSimpleResult ;
+			sh:minCount 1 ;
+			] 		   
+		) 	
+	] .

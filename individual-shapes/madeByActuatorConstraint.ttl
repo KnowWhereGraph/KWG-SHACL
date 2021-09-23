@@ -7,15 +7,15 @@
 @prefix sosa-shacl: <http://stko-kwg.geog.ucsb.ed/sosa-shacl/> .
 @prefix time: <http://www.w3.org/2006/time#> .
 
-### Shapes for class sosa:madeByActuator
+### Shape for class sosa:madeByActuator
 sosa-shacl:madeByActuatorDomainConstraint
-	a sh:PropertyShape ;
-	sh:targetSubjectsOf sosa:madeByActuator ;
+	a sh:NodeShape ;
+	sh:targetSubjectsOf sh:madeByActuator ;
 	rdfs:comment "We restrict the domain of sosa:madeByActuator to sosa:Actuation" ;
 	sh:class sosa:Actuation .
 
 sosa-shacl:madeByActuatorRangeConstraint
 	a sh:PropertyShape ;
-	sh:targetObjectsOf sosa:madeByActuator ;
+	sh:targetObjectsOf sh:madeByActuator ;
 	rdfs:comment "We restrict the range of sosa:madeByActuator to sosa:Actuator" ;
 	sh:class sosa:Actuator .
