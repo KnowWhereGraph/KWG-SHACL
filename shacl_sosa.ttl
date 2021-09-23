@@ -729,7 +729,7 @@ sosa-shacl:resultTimeRangeConstraint
     a sh:PropertyShape ;
 	sh:targetObjectsOf sosa:resultTime ;
 	rdfs:comment "We restrict the range of sosa:resultTime to xsd:dateTime";
-	sh:class xsd:dateTime . 
+	sh:datatype xsd:dateTime . 
 
 ### Shapes for property sosa:usedProcedure
 sosa-shacl:usedProcedureDomainConstraint 
