@@ -9,7 +9,7 @@
 
 ### Shapes for property sosa:usedProcedure
 sosa-shacl:usedProcedureDomainConstraint 
-    a sh:PropertyShape ;
+    a sh:NodeShape ;
 	sh:targetSubjectsOf sosa:usedProcedure ;
 	rdfs:comment "We restrict the domain of sosa:usedProcedure to sosa:Actuation, sosa:Observation, sosa:Sampling" ;
 	sh:or (
@@ -19,7 +19,7 @@ sosa-shacl:usedProcedureDomainConstraint
 		).
 
 sosa-shacl:usedProcedureRangeConstraint 
-    a sh:PropertyShape ;
+    a sh:NodeShape ;
 	sh:targetObjectsOf sosa:usedProcedure ;
 	rdfs:comment "We restrict the range of sosa:usedProcedure to sosa:Procedure" ;
 	sh:class sosa:Procedure .

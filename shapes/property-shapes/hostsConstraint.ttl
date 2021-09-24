@@ -9,13 +9,13 @@
 
 ### Shapes for property sosa:hosts
 sosa-shacl:hostsDomainConstraint 
-    a sh:PropertyShape ;
+    a sh:NodeShape ;
 	sh:targetSubjectsOf sosa:hosts ;
 	rdfs:comment "We restrict the domain of sosa:hosts to sosa:Platform" ;
 	sh:class  	sosa:Platform .
 
 sosa-shacl:hostsRangeConstraint 
-    a sh:PropertyShape ;
+    a sh:NodeShape ;
 	sh:targetObjectsOf sosa:hosts ;
 	rdfs:comment "We restrict the range of sosa:hosts to sosa:Actuator, sosa:Sensor, sosa:Sampler, or sosa:Platform" ;
 	sh:or (

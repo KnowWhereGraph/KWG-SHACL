@@ -9,13 +9,13 @@
 
 ### Shapes for property sosa:observedProperty
 sosa-shacl:observedPropertyDomainConstraint 
-    a sh:PropertyShape ;
+    a sh:NodeShape ;
 	sh:targetSubjectsOf sosa:observedProperty ;
 	rdfs:comment "We restrict the domain of sosa:observedProperty to sosa:Observation" ;
 	sh:class  	sosa:Observation .
 
 sosa-shacl:observedPropertyRangeConstraint 
-    a sh:PropertyShape ;
+    a sh:NodeShape ;
 	sh:targetObjectsOf sosa:observedProperty ;
 	rdfs:comment "We restrict the range of sosa:observedProperty to sosa:ObservableProperty" ;
 	sh:class sosa:ObservableProperty .

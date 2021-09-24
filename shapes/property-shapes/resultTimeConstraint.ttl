@@ -9,7 +9,7 @@
 
 ### Shapes for property sosa:resultTime
 sosa-shacl:resultTimeDomainConstraint
-    a sh:PropertyShape ;
+    a sh:NodeShape ;
 	sh:targetSubjectsOf sosa:resultTime ;
 	rdfs:comment "We restrict the domain of sosa:resultTime to sosa:Actuation, sosa:Observation, sosa:Sampling" ;
 	sh:or (
@@ -19,7 +19,7 @@ sosa-shacl:resultTimeDomainConstraint
 		  ) .
 
 sosa-shacl:resultTimeRangeConstraint
-    a sh:PropertyShape ;
+    a sh:NodeShape ;
 	sh:targetObjectsOf sosa:resultTime ;
 	rdfs:comment "We restrict the range of sosa:resultTime to xsd:dateTime";
 	sh:datatype xsd:dateTime . 

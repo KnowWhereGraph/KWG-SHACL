@@ -9,7 +9,7 @@
 
 ### Shapes for property sosa:phenomenonTime
 sosa-shacl:phenomenonTimeDomainConstraint 
-    a sh:PropertyShape ;
+    a sh:NodeShape ;
 	sh:targetSubjectsOf sosa:phenomenonTime ;
 	rdfs:comment "We restrict the domain of sosa:phenomenonTime to sosa:Actuation, sosa:Observation, sosa:Sampling" ;
 	sh:or (
@@ -19,7 +19,7 @@ sosa-shacl:phenomenonTimeDomainConstraint
 		)  .
 
 sosa-shacl:phenomenonTimeRangeConstraint 
-    a sh:PropertyShape ;
+    a sh:NodeShape ;
 	sh:targetObjectsOf sosa:phenomenonTime ;
 	rdfs:comment "We restrict the range of sosa:phenomenonTime to time:TemporalEntity" ;
 	sh:class time:TemporalEntity .

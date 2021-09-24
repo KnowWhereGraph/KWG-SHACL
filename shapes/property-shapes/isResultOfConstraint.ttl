@@ -9,7 +9,7 @@
 
 ### Shapes for property sosa:isResultOf
 sosa-shacl:isResultOfDomainConstraint
-    a sh:PropertyShape ;
+    a sh:NodeShape ;
 	sh:targetSubjectsOf sosa:isResultOf ;
 	rdfs:comment "We restrict the domain of sosa:isResultOf to sosa:Result, sosa:Sample" ;
 	sh:or (
@@ -18,7 +18,7 @@ sosa-shacl:isResultOfDomainConstraint
 		  ) .
 
 sosa-shacl:isResultOfRangeConstraint
-    a sh:PropertyShape ;
+    a sh:NodeShape ;
 	sh:targetObjectsOf sosa:isResultOf ;
 	rdfs:comment "We restrict the range of sosa:isResultOf to sosa:Actuation, sosa:Observation, and sosa:Sampling";
 	sh:or (

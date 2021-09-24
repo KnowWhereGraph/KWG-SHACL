@@ -9,7 +9,7 @@
 
 ### Shapes for property sosa:isHostedBy
 sosa-shacl:isHostedByDomainConstraint 
-    a sh:PropertyShape ;
+    a sh:NodeShape ;
 	sh:targetSubjectsOf sosa:isHostedBy ;
 	rdfs:comment "We restrict the domain of sosa:isHostedBy to 	sosa:Actuator, sosa:Sensor, sosa:Sampler, or sosa:Platform" ;
 	sh:or (
@@ -20,7 +20,7 @@ sosa-shacl:isHostedByDomainConstraint
 		  ) .
 
 sosa-shacl:isHostedByRangeConstraint 
-    a sh:PropertyShape ;
+    a sh:NodeShape ;
 	sh:targetObjectsOf sosa:isHostedBy ;
 	rdfs:comment "We restrict the range of sosa:isHostedBy to sosa:Platform" ;
 	sh:class sosa:Platform .

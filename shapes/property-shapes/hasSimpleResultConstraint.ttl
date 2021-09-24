@@ -9,7 +9,7 @@
 
 ### Shapes for property sosa:hasSimpleResult
 sosa-shacl:hasSimpleResultDomainConstraint
-    a sh:PropertyShape ;
+    a sh:NodeShape ;
 	sh:targetSubjectsOf sosa:hasSimpleResult ;
 	rdfs:comment "We restrict the domain of sosa:hasSimpleResult to sosa:Observation, sosa:Actuation" ;
 	sh:or (

@@ -9,13 +9,13 @@
 
 ### Shapes for class sosa:isActedOnBy
 sosa-shacl:isActedOnByDomainConstraint
-	a sh:PropertyShape ;
+	a sh:NodeShape ;
 	sh:targetSubjectsOf sosa:isActedOnBy ;
 	rdfs:comment "We restrict the domain of sosa:isActedOnBy to sosa:ActuatableProperty" ;
 	sh:class sosa:ActuatableProperty .
 
 sosa-shacl:isActedOnByRangeConstraint
-	a sh:PropertyShape ;
+	a sh:NodeShape ;
 	sh:targetObjectsOf sosa:isActedOnBy ;
 	rdfs:comment "We restrict the range of sosa:isActedOnBy to sosa:Actuation" ;
 	sh:class sosa:Actuation .
