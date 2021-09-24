@@ -398,23 +398,23 @@ sosa-shacl:SensorConstraint
 	] .
 
 
-###################### Shapes for object properties (36 in total in SOSA)######################
+###################### Shapes for object properties (23 in total in SOSA)######################
 ### Shapes for class sosa:actsOnProperty
 sosa-shacl:actsOnPropertyDomainConstraint
-	a sh:PropertyShape ;
+	a sh:NodeShape ;
 	sh:targetSubjectsOf sosa:actsOnProperty ;
 	rdfs:comment "We restrict the domain of sosa:actsOnProperty to sosa:Actuation" ;
 	sh:class sosa:Actuation .
 
 sosa-shacl:actsOnPropertyRangeConstraint
-	a sh:PropertyShape ;
+	a sh:NodeShape ;
 	sh:targetObjectsOf sosa:actsOnProperty ;
 	rdfs:comment "We restrict the range of sosa:actsOnProperty to sosa:ActuatableProperty" ;
 	sh:class sosa:ActuatableProperty .
 
 ### Shapes for property sosa:hasFeatureOfInterest
 sosa-shacl:hasFeatureOfInterestOfDomainConstraint
-    a sh:PropertyShape ;
+    a sh:NodeShape ;
 	sh:targetSubjectsOf sosa:hasFeatureOfInterest ;
 	rdfs:comment "We restrict the domain of sosa:hasFeatureOfInterest to sosa:Observation, sosa:Actuation, sosa:Sampling" ;
 	sh:or (
@@ -424,7 +424,7 @@ sosa-shacl:hasFeatureOfInterestOfDomainConstraint
 		  ) .
 
 sosa-shacl:hasFeatureOfInterestOfRangeConstraint
-    a sh:PropertyShape ;
+    a sh:NodeShape ;
 	sh:targetObjectsOf sosa:hasFeatureOfInterest ;
 	rdfs:comment "We restrict the range of sosa:hasFeatureOfInterest to sosa:FeatureOfInterest, sosa:Sample" ;
 	sh:or (
@@ -434,7 +434,7 @@ sosa-shacl:hasFeatureOfInterestOfRangeConstraint
 
 ### Shapes for property sosa:hasResult
 sosa-shacl:hasResultDomainConstraint
-	a sh:PropertyShape ;
+	a sh:NodeShape ;
 	sh:targetSubjectsOf sosa:hasResult ;
 	rdfs:comment "We restrict the domain of sosa:hosts to sosa:Actuation, sosa:Observation, sosa:Sampling" ;
 	sh:or (
@@ -444,7 +444,7 @@ sosa-shacl:hasResultDomainConstraint
 		  ) .
 
 sosa-shacl:hasResultRangeConstraint
-	a sh:PropertyShape ;
+	a sh:NodeShape ;
 	sh:targetObjectsOf sosa:hasResult ;
 	rdfs:comment "We restrict the range of sosa:hosts to sosa:Result, sosa:Sample" ;
 	sh:or (
@@ -454,13 +454,13 @@ sosa-shacl:hasResultRangeConstraint
 
 ### Shapes for class sosa:hasSample
 sosa-shacl:hasSampleDomainConstraint
-	a sh:PropertyShape ;
+	a sh:NodeShape ;
 	sh:targetSubjectsOf sh:hasSample ;
 	rdfs:comment "We restrict the domain of sosa:hasSample to sosa:FeatureOfInterest" ;
 	sh:class sosa:FeatureOfInterest .
 
 sosa-shacl:hasSampleRangeConstraint
-	a sh:PropertyShape ;
+	a sh:NodeShape ;
 	sh:targetObjectsOf sh:hasSample ;
 	rdfs:comment "We restrict the range of sosa:hasSample to sosa:Sample" ;
 	sh:class sosa:Sample .
@@ -468,7 +468,7 @@ sosa-shacl:hasSampleRangeConstraint
 
 ### Shapes for property sosa:hasSimpleResult
 sosa-shacl:hasSimpleResultDomainConstraint
-    a sh:PropertyShape ;
+    a sh:NodeShape ;
 	sh:targetSubjectsOf sosa:hasSimpleResult ;
 	rdfs:comment "We restrict the domain of sosa:hasSimpleResult to sosa:Observation, sosa:Actuation" ;
 	sh:or (
@@ -479,13 +479,13 @@ sosa-shacl:hasSimpleResultDomainConstraint
 
 ### Shapes for property sosa:hosts
 sosa-shacl:hostsDomainConstraint 
-    a sh:PropertyShape ;
+    a sh:NodeShape ;
 	sh:targetSubjectsOf sosa:hosts ;
 	rdfs:comment "We restrict the domain of sosa:hosts to sosa:Platform" ;
 	sh:class  	sosa:Platform .
 
 sosa-shacl:hostsRangeConstraint 
-    a sh:PropertyShape ;
+    a sh:NodeShape ;
 	sh:targetObjectsOf sosa:hosts ;
 	rdfs:comment "We restrict the range of sosa:hosts to sosa:Actuator, sosa:Sensor, sosa:Sampler, or sosa:Platform" ;
 	sh:or (
@@ -497,13 +497,13 @@ sosa-shacl:hostsRangeConstraint
 
 ### Shapes for class sosa:isActedOnBy
 sosa-shacl:isActedOnByDomainConstraint
-	a sh:PropertyShape ;
+	a sh:NodeShape ;
 	sh:targetSubjectsOf sosa:isActedOnBy ;
 	rdfs:comment "We restrict the domain of sosa:isActedOnBy to sosa:ActuatableProperty" ;
 	sh:class sosa:ActuatableProperty .
 
 sosa-shacl:isActedOnByRangeConstraint
-	a sh:PropertyShape ;
+	a sh:NodeShape ;
 	sh:targetObjectsOf sosa:isActedOnBy ;
 	rdfs:comment "We restrict the range of sosa:isActedOnBy to sosa:Actuation" ;
 	sh:class sosa:Actuation .
@@ -511,7 +511,7 @@ sosa-shacl:isActedOnByRangeConstraint
 
 ### Shapes for property sosa:isFeatureOfInterestOf
 sosa-shacl:isFeatureOfInterestOfDomainConstraint
-    a sh:PropertyShape ;
+    a sh:NodeShape ;
 	sh:targetSubjectsOf sosa:isFeatureOfInterest ;
 	rdfs:comment "We restrict the domain of sosa:isFeatureOfInterest to sosa:FeatureOfInterest, sosa:Sample" ;
 	sh:or (
@@ -520,7 +520,7 @@ sosa-shacl:isFeatureOfInterestOfDomainConstraint
 		  ) .
 
 sosa-shacl:isFeatureOfInterestOfRangeConstraint
-    a sh:PropertyShape ;
+    a sh:NodeShape ;
 	sh:targetObjectsOf sosa:hosts ;
 	rdfs:comment "We restrict the range of sosa:isFeatureOfInterest to sosa:Observation, sosa:Actuation, sosa:Sampling" ;
 	sh:or (
@@ -531,7 +531,7 @@ sosa-shacl:isFeatureOfInterestOfRangeConstraint
 
 ### Shapes for property sosa:isHostedBy
 sosa-shacl:isHostedByDomainConstraint 
-    a sh:PropertyShape ;
+    a sh:NodeShape ;
 	sh:targetSubjectsOf sosa:isHostedBy ;
 	rdfs:comment "We restrict the domain of sosa:isHostedBy to 	sosa:Actuator, sosa:Sensor, sosa:Sampler, or sosa:Platform" ;
 	sh:or (
@@ -542,27 +542,27 @@ sosa-shacl:isHostedByDomainConstraint
 		  ) .
 
 sosa-shacl:isHostedByRangeConstraint 
-    a sh:PropertyShape ;
+    a sh:NodeShape ;
 	sh:targetObjectsOf sosa:isHostedBy ;
 	rdfs:comment "We restrict the range of sosa:isHostedBy to sosa:Platform" ;
 	sh:class sosa:Platform .
 
 ### Shapes for property sosa:isObservedBy
 sosa-shacl:isObservedByDomainConstraint 
-    a sh:PropertyShape ;
+    a sh:NodeShape ;
 	sh:targetSubjectsOf sosa:isObservedBy ;
 	rdfs:comment "We restrict the domain of sosa:isObservedBy to sosa:Sensor" ;
 	sh:class sosa:ObservableProperty .
 
 sosa-shacl:isObservedByRangeConstraint 
-    a sh:PropertyShape ;
+    a sh:NodeShape ;
 	sh:targetObjectsOf sosa:isObservedBy ;
 	rdfs:comment "We restrict the range of sosa:isObservedBy to sosa:ObservableProperty" ;
 	sh:class sosa:Sensor .
 
 ### Shapes for property sosa:isResultOf
 sosa-shacl:isResultOfDomainConstraint
-    a sh:PropertyShape ;
+    a sh:NodeShape ;
 	sh:targetSubjectsOf sosa:isResultOf ;
 	rdfs:comment "We restrict the domain of sosa:isResultOf to sosa:Result, sosa:Sample" ;
 	sh:or (
@@ -571,7 +571,7 @@ sosa-shacl:isResultOfDomainConstraint
 		  ) .
 
 sosa-shacl:isResultOfRangeConstraint
-    a sh:PropertyShape ;
+    a sh:NodeShape ;
 	sh:targetObjectsOf sosa:isResultOf ;
 	rdfs:comment "We restrict the range of sosa:isResultOf to sosa:Actuation, sosa:Observation, and sosa:Sampling";
 	sh:or (
@@ -582,124 +582,124 @@ sosa-shacl:isResultOfRangeConstraint
 
 ### Shapes for class sosa:isSampleOf
 sosa-shacl:isSampleOfDomainConstraint
-	a sh:PropertyShape ;
+	a sh:NodeShape ;
 	sh:targetSubjectsOf sosa:isSampleOf ;
 	rdfs:comment "We restrict the domain of sosa:isSampleOf to sosa:Sample" ;
 	sh:class sosa:Sample .
 
 sosa-shacl:isSampleOfRangeConstraint
-	a sh:PropertyShape ;
+	a sh:NodeShape ;
 	sh:targetObjectsOf sosa:isSampleOf ;
 	rdfs:comment "We restrict the range of sosa:isSampleOf to sosa:FeatureOfInterest" ;
 	sh:class sosa:FeatureOfInterest .
 
 ### Shapes for class sosa:madeActuation
 sosa-shacl:madeActuationDomainConstraint
-	a sh:PropertyShape ;
+	a sh:NodeShape ;
 	sh:targetSubjectsOf sosa:madeActuation ;
 	rdfs:comment "We restrict the domain of sosa:madeActuation to sosa:Actuator" ;
 	sh:class sosa:Actuator .
 
 sosa-shacl:madeActuationRangeConstraint
-	a sh:PropertyShape ;
+	a sh:NodeShape ;
 	sh:targetObjectsOf sosa:madeActuation ;
 	rdfs:comment "We restrict the range of sosa:madeActuation to sosa:Actuation" ;
 	sh:class sosa:Actuation .
 
 ### Shapes for class sosa:madeByActuator
 sosa-shacl:madeByActuatorDomainConstraint
-	a sh:PropertyShape ;
+	a sh:NodeShape ;
 	sh:targetSubjectsOf sosa:madeByActuator ;
 	rdfs:comment "We restrict the domain of sosa:madeByActuator to sosa:Actuation" ;
 	sh:class sosa:Actuation .
 
 sosa-shacl:madeByActuatorRangeConstraint
-	a sh:PropertyShape ;
+	a sh:NodeShape ;
 	sh:targetObjectsOf sosa:madeByActuator ;
 	rdfs:comment "We restrict the range of sosa:madeByActuator to sosa:Actuator" ;
 	sh:class sosa:Actuator .
 
 ### Shapes for property sosa:madeBySampler
 sosa-shacl:madeBySamplerDomainConstraint 
-    a sh:PropertyShape ;
+    a sh:NodeShape ;
 	sh:targetSubjectsOf sosa:madeBySampler ;
 	rdfs:comment "We restrict the domain of sosa:madeBySampler to sosa:Sampling" ;
 	sh:class sosa:Sampling .
 
 sosa-shacl:madeBySamplerRangeConstraint 
-    a sh:PropertyShape ;
+    a sh:NodeShape ;
 	sh:targetObjectsOf sosa:madeBySampler ;
 	rdfs:comment "We restrict the range of sosa:madeBySampler to sosa:Sampler" ;
 	sh:class sosa:Sampler .
 
 ### Shapes for class sosa:madeBySensor
 sosa-shacl:madeBySensorDomainConstraint
-	a sh:PropertyShape ;
+	a sh:NodeShape ;
 	sh:targetSubjectsOf sosa:madeBySensor ;
 	rdfs:comment "We restrict the domain of sosa:madeBySensor to sosa:Observation" ;
 	sh:class sosa:Observation .
 
 sosa-shacl:madeBySensorRangeConstraint
-	a sh:PropertyShape ;
+	a sh:NodeShape ;
 	sh:targetObjectsOf sosa:madeBySensor ;
 	rdfs:comment "We restrict the range of sosa:madeBySensor to sosa:BySensor" ;
 	sh:class sosa:Sensor .
 
 ### Shapes for class sosa:madeObservation
 sosa-shacl:madeObservationDomainConstraint
-	a sh:PropertyShape ;
+	a sh:NodeShape ;
 	sh:targetSubjectsOf sosa:madeObservation ;
 	rdfs:comment "We restrict the domain of sosa:madeObservation to sosa:Sensor" ;
 	sh:class sosa:Sensor .
 
 sosa-shacl:madeObservationRangeConstraint
-	a sh:PropertyShape ;
+	a sh:NodeShape ;
 	sh:targetObjectsOf sosa:madeObservation ;
 	rdfs:comment "We restrict the range of sosa:madeObservation to sosa:Observation" ;
 	sh:class sosa:Observation .
 
 ### Shapes for property sosa:madeSampling
 sosa-shacl:madeSamplingDomainConstraint 
-    a sh:PropertyShape ;
+    a sh:NodeShape ;
 	sh:targetSubjectsOf sosa:madeSampling ;
 	rdfs:comment "We restrict the domain of sosa:madeSampling to sosa:Sampler" ;
 	sh:class sosa:Sampler .
 
 sosa-shacl:madeSamplingRangeConstraint 
-    a sh:PropertyShape ;
+    a sh:NodeShape ;
 	sh:targetObjectsOf sosa:madeSampling ;
 	rdfs:comment "We restrict the range of sosa:madeSampling to sosa:Sampling" ;
 	sh:class sosa:Sampling .
 
 ### Shapes for property sosa:observes
 sosa-shacl:observesDomainConstraint 
-    a sh:PropertyShape ;
+    a sh:NodeShape ;
 	sh:targetSubjectsOf sosa:observes ;
 	rdfs:comment "We restrict the domain of sosa:observes to sosa:Sensor" ;
 	sh:class sosa:Sensor .
 
 sosa-shacl:observesRangeConstraint 
-    a sh:PropertyShape ;
+    a sh:NodeShape ;
 	sh:targetObjectsOf sosa:observes ;
 	rdfs:comment "We restrict the range of sosa:observes to sosa:ObservableProperty" ;
 	sh:class sosa:ObservableProperty .
 
 ### Shapes for property sosa:observedProperty
 sosa-shacl:observedPropertyDomainConstraint 
-    a sh:PropertyShape ;
+    a sh:NodeShape ;
 	sh:targetSubjectsOf sosa:observedProperty ;
 	rdfs:comment "We restrict the domain of sosa:observedProperty to sosa:Observation" ;
 	sh:class  	sosa:Observation .
 
 sosa-shacl:observedPropertyRangeConstraint 
-    a sh:PropertyShape ;
+    a sh:NodeShape ;
 	sh:targetObjectsOf sosa:observedProperty ;
 	rdfs:comment "We restrict the range of sosa:observedProperty to sosa:ObservableProperty" ;
 	sh:class sosa:ObservableProperty .
 
 ### Shapes for property sosa:phenomenonTime
 sosa-shacl:phenomenonTimeDomainConstraint 
-    a sh:PropertyShape ;
+    a sh:NodeShape ;
 	sh:targetSubjectsOf sosa:phenomenonTime ;
 	rdfs:comment "We restrict the domain of sosa:phenomenonTime to sosa:Actuation, sosa:Observation, sosa:Sampling" ;
 	sh:or (
@@ -709,14 +709,14 @@ sosa-shacl:phenomenonTimeDomainConstraint
 		)  .
 
 sosa-shacl:phenomenonTimeRangeConstraint 
-    a sh:PropertyShape ;
+    a sh:NodeShape ;
 	sh:targetObjectsOf sosa:phenomenonTime ;
 	rdfs:comment "We restrict the range of sosa:phenomenonTime to time:TemporalEntity" ;
 	sh:class time:TemporalEntity .
 
 ### Shapes for property sosa:resultTime
 sosa-shacl:resultTimeDomainConstraint
-    a sh:PropertyShape ;
+    a sh:NodeShape ;
 	sh:targetSubjectsOf sosa:resultTime ;
 	rdfs:comment "We restrict the domain of sosa:resultTime to sosa:Actuation, sosa:Observation, sosa:Sampling" ;
 	sh:or (
@@ -726,14 +726,14 @@ sosa-shacl:resultTimeDomainConstraint
 		  ) .
 
 sosa-shacl:resultTimeRangeConstraint
-    a sh:PropertyShape ;
+    a sh:NodeShape ;
 	sh:targetObjectsOf sosa:resultTime ;
 	rdfs:comment "We restrict the range of sosa:resultTime to xsd:dateTime";
 	sh:datatype xsd:dateTime . 
 
 ### Shapes for property sosa:usedProcedure
 sosa-shacl:usedProcedureDomainConstraint 
-    a sh:PropertyShape ;
+    a sh:NodeShape ;
 	sh:targetSubjectsOf sosa:usedProcedure ;
 	rdfs:comment "We restrict the domain of sosa:usedProcedure to sosa:Actuation, sosa:Observation, sosa:Sampling" ;
 	sh:or (
@@ -743,7 +743,7 @@ sosa-shacl:usedProcedureDomainConstraint
 		).
 
 sosa-shacl:usedProcedureRangeConstraint 
-    a sh:PropertyShape ;
+    a sh:NodeShape ;
 	sh:targetObjectsOf sosa:usedProcedure ;
 	rdfs:comment "We restrict the range of sosa:usedProcedure to sosa:Procedure" ;
 	sh:class sosa:Procedure .
