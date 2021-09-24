@@ -13,7 +13,7 @@ for label in labels:
             node_shape_path = os.path.join(directory, node_shape)
             shape_paths += [node_shape_path]
             filename = node_shape.replace("Constraint", "-ExampleGraph")
-            example_graph_path = os.path.join("./example_graphs", filename)
+            example_graph_path = os.path.join("./example-graphs", filename)
             example_graph_paths[node_shape_path] = example_graph_path
 
 for shape_path in shape_paths:
@@ -26,7 +26,8 @@ for shape_path in shape_paths:
 
       # Get the shape to test
       example_graph = Graph()
-      example_graph.parse('test_example.ttl', format='ttl')
+      example_graph_path = example_graph_paths[shape_path]
+      example_graph.parse(example_graph_path, format='ttl')
 
       # Validate
       r = validate(data_graph = example_graph,
