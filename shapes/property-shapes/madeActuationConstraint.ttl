@@ -11,11 +11,11 @@
 sosa-shacl:madeActuationDomainConstraint
 	a sh:PropertyShape ;
 	sh:targetSubjectsOf sosa:madeActuation ;
-	rdfs:comment "We restrict the domain of sosa:madeActuation to sosa:Actuator"
+	rdfs:comment "We restrict the domain of sosa:madeActuation to sosa:Actuator" ;
 	sh:class sosa:Actuator .
 
 sosa-shacl:madeActuationRangeConstraint
 	a sh:PropertyShape ;
 	sh:targetObjectsOf sosa:madeActuation ;
-	rdfs:comment "We restrict the range of sosa:madeActuation to sosa:Actuation"
+	rdfs:comment "We restrict the range of sosa:madeActuation to sosa:Actuation" ;
 	sh:class sosa:Actuation .

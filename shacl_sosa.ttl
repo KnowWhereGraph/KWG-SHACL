@@ -388,7 +388,7 @@ sosa-shacl:SensorConstraint
 	] ;
 	sh:property [
 		sh:path ssn:detects ;
-		rdrs:comment "A sensor detects observation."@en ;
+		rdfs:comment "A sensor detects observation."@en ;
 		sh:class sosa:Stimulus ;
 	] ;
 	sh:property [
@@ -597,13 +597,13 @@ sosa-shacl:isSampleOfRangeConstraint
 sosa-shacl:madeActuationDomainConstraint
 	a sh:PropertyShape ;
 	sh:targetSubjectsOf sosa:madeActuation ;
-	rdfs:comment "We restrict the domain of sosa:madeActuation to sosa:Actuator"
+	rdfs:comment "We restrict the domain of sosa:madeActuation to sosa:Actuator" ;
 	sh:class sosa:Actuator .
 
 sosa-shacl:madeActuationRangeConstraint
 	a sh:PropertyShape ;
 	sh:targetObjectsOf sosa:madeActuation ;
-	rdfs:comment "We restrict the range of sosa:madeActuation to sosa:Actuation"
+	rdfs:comment "We restrict the range of sosa:madeActuation to sosa:Actuation" ;
 	sh:class sosa:Actuation .
 
 ### Shapes for class sosa:madeByActuator
