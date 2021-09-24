@@ -1,0 +1,13 @@
+@prefix ex: <http://example.org/ns#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sosa-shacl: <http://stko-kwg.geog.ucsb.ed/sosa-shacl/> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+
+ex:obs1 a sosa:Observation ;
+       sosa:observedProperty ex:obsprop1 .
+
+ex:sensor2 a sosa:Sensor ;
+     sosa:observedProperty ex:obsprop2 .
