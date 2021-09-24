@@ -40,4 +40,7 @@ for shape_path in shape_paths:
             debug=False)
       conforms, results_graph, results_text = r
 
-      print (conforms)
+      shape_name = shape_path.split("/")[-1]
+      print (f"Processing: {shape_name}!")
+      print (f"Result Text: {results_text}")
+      print (("#"*130 +"\n")*2)
