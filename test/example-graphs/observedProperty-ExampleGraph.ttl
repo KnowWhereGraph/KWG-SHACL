@@ -6,6 +6,10 @@
 @prefix sosa-shacl: <http://stko-kwg.geog.ucsb.ed/sosa-shacl/> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
 
+ex:obsprop1 a sosa:ObservableProperty .
+
+ex:obsprop2 a sosa:ObservableProperty .
+
 ex:obs1 a sosa:Observation ;
        sosa:observedProperty ex:obsprop1 .
 
