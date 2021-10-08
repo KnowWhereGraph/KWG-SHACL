@@ -45,7 +45,7 @@ sosa-shacl:ObservationConstraint
 		sh:class ssn:Stimulus ;			
 	] ;
 	sh:property [
-	    rdfs:comment "An observation has to have one phenomenon time or one result time. Having both is OK but the result time has to be latter than the phenomenon time."@en ;
+	    rdfs:comment "An observation has to have one phenomenon time or one result time."@en ;
 	    ### a missing constraint here is that if both phenomenonTime and resultTime exist, resultTime 
 	    ### has to be later than phenomenon time  
 		sh:or (
@@ -63,6 +63,24 @@ sosa-shacl:ObservationConstraint
 			] 		   
 		) 
 	] ;
+
+	sh:sparql [
+		a sh:SPARQLConstraint ;   # This triple is optional
+		
+		sh:message "Result time has to be latter than the phenomenon time." ;
+		sh:prefixes sosa: , time: ;
+		sh:select """
+			SELECT $this (sosa:phenomenonTime AS ?path) ?value
+			WHERE {
+				$this sosa:phenomenonTime ?value ;
+					sosa:resultTime ?value2_literal . 
+				?value time:hasBeginning ?value_object .
+                                ?value_object time:inXSDDateTime ?value1_literal .    
+				FILTER (?value1_literal < ?value2_literal)
+			}
+			""" ;
+	] ;
+
 	sh:property [
 		rdfs:comment "An observation has to have a result or a simple result. Having both is OK."@en ;
 		sh:or (
