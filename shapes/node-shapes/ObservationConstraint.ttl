@@ -67,7 +67,7 @@ sosa-shacl:ObservationConstraint
 	sh:sparql [
 		a sh:SPARQLConstraint ;   # This triple is optional
 		
-		sh:message "Result time has to be latter than the phenomenon time." ;
+		sh:message "Result time has to be later than the phenomenon time." ;
 		sh:prefixes sosa: , time: ;
 		sh:select """
 			SELECT $this (sosa:phenomenonTime AS ?path) ?value
