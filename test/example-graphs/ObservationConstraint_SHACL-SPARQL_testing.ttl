@@ -4,26 +4,14 @@
 @prefix schema: <http://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
-@prefix ssn: <http://www.w3.org/ns/ssn/> .
 @prefix time: <http://www.w3.org/2006/time#> .
 @prefix kwgr: <http://www.geog.ucsb.edu/lod/> .
 @prefix sosa-shacl: <http://stko-kwg.geog.ucsb.ed/sosa-shacl/> .
 
-kwgr:aaa a time:TemporalEntity .
-kwgr:aab a time:TemporalEntity .
-kwgr:aac a time:TemporalEntity .
-
-kwgr:ccc a sosa:FeatureOfInterest .
-kwgr:ddd a sosa:ObservableProperty .
-
 ex:Obs1 a sosa:Observation ;
-     sosa:hasFeatureOfInterest kwgr:ccc ;
-     sosa:observedProperty kwgr:ddd ;
      sosa:phenomenonTime kwgr:aaa ;
-     #sosa:phenomenonTime kwgr:aab ;
-     #sosa:phenomenonTime kwgr:aac ;
-     sosa:resultTime "2016-09-02T09:30:00"^^xsd:dateTime .
+     sosa:resultTime "2016-09-02T09:30:00+05:00"^^xsd:dateTimeStamp .
 
 kwgr:aaa time:hasBeginning kwgr:bbb .
 
-kwgr:bbb time:inXSDDateTime "2017-09-01T09:30:00"^^xsd:dateTime .
+kwgr:bbb time:inXSDDateTime "2016-09-03T09:30:00+05:00"^^xsd:dateTimeStamp .

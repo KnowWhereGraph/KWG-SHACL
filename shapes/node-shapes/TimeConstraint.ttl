@@ -1,0 +1,36 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix sosa-shacl: <http://stko-kwg.geog.ucsb.ed/sosa-shacl/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+
+sosa-shacl:SOSATimeConstraint
+     a sh:NodeShape ;
+     sh:targetClass sosa:Observation ; 
+     rdfs:comment "An observation has to have one phenomenon time or one result time, if both exist, result time has to be latter than phenomenon time."@en ;
+     sh:or  (    
+		    [
+			sh:path sosa:phenomenonTime ;
+		 	sh:minCount 1 ;
+			] 
+			[
+			sh:path sosa:resultTime ;
+			sh:minCount 1 ;
+			] 		   
+	 ) ;
+    sh:sparql [
+		sh:message "Result time has to be later than the phenomenon time." ;
+		sh:select """
+			SELECT $this (sosa:phenomenonTime AS ?path) ?phenTime_literal
+			WHERE {
+				$this sosa:phenomenonTime ?phenTime ;
+					  sosa:resultTime ?resultTime_literal . 
+				?phenTime time:hasBeginning ?phenTime_obj .
+               ?phenTime_obj time:inXSDDateTime ?phenTime_literal .    
+				FILTER (?phenTime_literal < ?resultTime_literal)
+			}
+			""" ;
+	] .
