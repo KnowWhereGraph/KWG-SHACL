@@ -10,15 +10,19 @@
 @prefix sosa-shacl: <http://stko-kwg.geog.ucsb.ed/sosa-shacl/> .
 
 kwgr:aaa a time:TemporalEntity .
+kwgr:aab a time:TemporalEntity .
+kwgr:aac a time:TemporalEntity .
+
 kwgr:ccc a sosa:FeatureOfInterest .
 kwgr:ddd a sosa:ObservableProperty .
 
 ex:Obs1 a sosa:Observation ;
      sosa:hasFeatureOfInterest kwgr:ccc ;
-     sosa:observedProperty kwgr:ddd ;
-
-     sosa:phenomenonTime kwgr:aaa ;
-     sosa:resultTime "2016-09-02T09:30:00"^^xsd:dateTime .
+     sosa:observedProperty kwgr:ddd .
+#     sosa:phenomenonTime kwgr:aaa ;
+#     sosa:phenomenonTime kwgr:aab ;
+#     sosa:phenomenonTime kwgr:aac .
+#     sosa:resultTime "2016-09-02T09:30:00"^^xsd:dateTime .
 
 kwgr:aaa time:hasBeginning kwgr:bbb .
 

@@ -52,17 +52,31 @@ sosa-shacl:ObservationConstraint
 	sh:property [
 	    rdfs:comment "An Observation has to have at most one phenomenon time."@en ;
 		sh:path sosa:phenomenonTime ;
-	 	sh:maxCount 1 ;
-	 	sh:class time:TemporalEntity ; 
+	 	sh:maxCount 1 ; 
+	 	sh:class time:TemporalEntity ;
 	] ;
 
 	sh:property [
 	    rdfs:comment "An Observation has to have at most one result time."@en ;
 		sh:path sosa:resultTime ;
 	 	sh:maxCount 1 ;
-	 	sh:datetype time:dateTime ; 
+	 	sh:datatype time:dateTime ; 
 	] ;
 
+	sh:or (
+		sh:property [
+		    rdfs:comment "An Observation has to have at least one phenomenon time or result time."@en ;
+			sh:path sosa:phenomenonTime ;
+		 	sh:minCount 1 ; 
+			] 
+
+		sh:property [
+		    rdfs:comment "An Observation has to have at least one phenomenon time or result time."@en ;
+			sh:path sosa:resultTime ;
+		 	sh:minCount 1 ;
+			]	 
+	) ;
+	
 	sh:sparql [
 		sh:message "Result time has to be later than the phenomenon time." ;
 		sh:select """

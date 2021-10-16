@@ -36,7 +36,7 @@ for shape_path in shape_paths:
         abort_on_first=False,
         allow_warnings=False,
         meta_shacl=True,
-        advanced=False,
+        advanced=True,
         js=False,
         inference='rdfs',
         serialize_report_graph=True)
