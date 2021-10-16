@@ -1,0 +1,75 @@
+#### These are SHACL shapes for the SOSA ontology -- sosa:Actuation####
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix sosa-shacl: <http://stko-kwg.geog.ucsb.ed/sosa-shacl/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+
+### Shape for class sosa:Actuation
+sosa-shacl:ActuationConstraint
+	a sh:NodeShape ;
+	sh:targetClass sosa:Actuation ;
+	
+	sh:property [
+	 	sh:path sosa:madeByActuator ;
+	 	rdfs:comment "An actuation is made by mostly one actuator."@en ;
+		sh:class sosa:Actuator ;
+		#sh:minCount 1 ; 
+		sh:maxCount 1 ; 
+	];
+	sh:property [
+	 	sh:path sosa:usedProcedure ;
+	 	rdfs:comment "An actuation is made through a procedure."@en ;
+		sh:class sosa:Procedure ;
+	];
+	sh:property [
+	 	sh:path sosa:hasFeatureOfInterest ;
+	 	rdfs:comment "An actuation has one and only one feature of interest."@en ;
+		sh:class sosa:FeatureOfInterest ;
+		sh:minCount 1 ; 
+		sh:maxCount 1 ; 
+	];
+	sh:property [
+	 	sh:path sosa:actsOnProperty ;
+	 	rdfs:comment "An actuation acts at least on one actuable property."@en ;
+		sh:class sosa:ActuatableProperty ;
+		sh:minCount 1 ; 
+	];
+	sh:property [
+		rdfs:comment "An actuation can have hasResult or hasSimpleResult as the result, but not neither."@en ;
+		sh:or (
+			[
+			sh:path sosa:hasResult ;
+		 	sh:minCount 1 ;
+		 	sh:maxCount 1 ; 
+		 	sh:class sosa:Result ; 
+			]
+			[
+			sh:path sosa:hasSimpleResult ;
+			sh:minCount 1 ;
+			sh:maxCount 1 ; 
+			] 		   
+		) 	
+	] ;
+	sh:property [
+	    rdfs:comment "An actuatiin has to have either one phenomenonTime or one resultTime."@en ;
+	    ### a missing constraint here is that if both phenomenonTime and resultTime exist, resultTime 
+	    ### has to be later than phenomenon time  
+		sh:or (
+			[
+			sh:path sosa:phenomenonTime ;
+		 	sh:maxCount 1 ;
+		 	sh:minCount 1 ;
+		 	sh:class time:TemporalEntity ; 
+			]
+			[
+			sh:path sosa:resultTime ;
+			sh:maxCount 1 ;
+			sh:minCount 1 ;
+			sh:datatype xsd:dateTime ;
+			] 		   
+		) 
+	].
+	
