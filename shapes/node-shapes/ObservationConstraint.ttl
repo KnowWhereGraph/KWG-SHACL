@@ -86,7 +86,7 @@ sosa-shacl:ObservationConstraint
 #					  sosa:resultTime ?resultTime_literal . 
 #				?phenTime time:hasBeginning ?phenTime_obj .
 #               ?phenTime_obj time:inXSDDateTime ?phenTime_literal .    
-#				FILTER (?phenTime_literal > ?resultTime_literal)
+#				FILTER (?phenTime_literal < ?resultTime_literal)
 #			}
 #			""" ;
 #	] .
